@@ -7,7 +7,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="홈 페이지 입니다"
+        android:text="집에 가고 싶어요"
         android:textColor="@color/black"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
