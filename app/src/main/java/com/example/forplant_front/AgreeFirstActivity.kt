@@ -77,6 +77,14 @@ class AgreeFirstActivity: AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        binding.btnRc2.setOnClickListener {
+            val intent = Intent(this, Agree2Activity::class.java)
+            startActivity(intent)
+        }
+        binding.btnRc3.setOnClickListener {
+            val intent = Intent(this, Agree3Activity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setCheckState(isChecked: Boolean, imageView: ImageView) {

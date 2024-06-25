@@ -20,7 +20,12 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".Agree2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Agree3Activity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
