@@ -73,7 +73,7 @@ class AgreeFirstActivity: AppCompatActivity() {
 
         binding.imageView10.setOnClickListener {
             if (finalcheck) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, ProfilenewActivity::class.java)
                 startActivity(intent)
             }
         }

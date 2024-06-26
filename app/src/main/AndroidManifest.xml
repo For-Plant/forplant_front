@@ -27,6 +27,12 @@
             android:name=".Agree3Activity"
             android:exported="false" />
         <activity
+            android:name=".ProfilenewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashwelcomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
