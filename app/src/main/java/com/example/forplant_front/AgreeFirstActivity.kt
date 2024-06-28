@@ -77,6 +77,10 @@ class AgreeFirstActivity: AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        binding.btnRc1.setOnClickListener {
+            val intent = Intent(this, Agree1Activity::class.java)
+            startActivity(intent)
+        }
         binding.btnRc2.setOnClickListener {
             val intent = Intent(this, Agree2Activity::class.java)
             startActivity(intent)

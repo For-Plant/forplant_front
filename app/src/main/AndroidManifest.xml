@@ -21,6 +21,9 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".Agree1Activity"
+            android:exported="false" />
+        <activity
             android:name=".Agree2Activity"
             android:exported="false" />
         <activity
@@ -28,6 +31,12 @@
             android:exported="false" />
         <activity
             android:name=".ProfilenewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IdfoundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordfoundActivity"
             android:exported="false" />
         <activity
             android:name=".SplashwelcomeActivity"

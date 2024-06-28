@@ -22,5 +22,13 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        binding.textView19.setOnClickListener {
+            val intent = Intent(this, IdfoundActivity::class.java)
+            startActivity(intent)
+        }
+        binding.textView20.setOnClickListener {
+            val intent = Intent(this, PasswordfoundActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
