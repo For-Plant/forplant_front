@@ -20,5 +20,9 @@ class PasswordfoundActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.button.setOnClickListener {
+            finish()
+        }
+
     }
 }
