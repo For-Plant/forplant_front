@@ -35,7 +35,7 @@
         android:layout_marginTop="39dp"
         android:text="ID 찾기"
         android:textSize="12dp"
-        android:textColor="@color/black"
+        android:textColor="@color/maincolor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 

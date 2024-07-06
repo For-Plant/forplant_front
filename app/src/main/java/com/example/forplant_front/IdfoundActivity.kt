@@ -16,8 +16,15 @@ class IdfoundActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imageView2.setOnClickListener {
-            finish()
+            val intent = Intent(this, LoginActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            startActivity(intent)
         }
 
+        binding.textView44.setOnClickListener {
+            val intent = Intent(this, PasswordfoundActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
