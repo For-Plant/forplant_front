@@ -42,6 +42,9 @@
             android:name=".SplashwelcomeActivity"
             android:exported="false" />
         <activity
+            android:name=".ProfilemodifyActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
