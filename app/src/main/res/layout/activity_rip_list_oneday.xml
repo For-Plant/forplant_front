@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="무지개더미"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:srcCompat="@drawable/btn_left" />
+
+    <TextView
+        android:id="@+id/textView63"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginTop="27dp"
+        android:gravity="center"
+        android:text="고기친구"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:text="2023.09 ~ 2023.10"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+        app:layout_constraintStart_toEndOf="@+id/imageView25"
+        app:layout_constraintTop_toTopOf="@+id/imageView25" />
+
+    <TextView
+        android:id="@+id/textView65"
+        android:layout_width="312dp"
+        android:layout_height="424dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/gray_rectangle_big3"
+        android:padding="13dp"
+        android:text="오늘은 식목일을 맞이하여 오래 키울 수 있는 식물을 하나 샀다. 선인장을 샀는데, 쪼끄만 게 너무 귀엽다. 이름은 선쪼꼬. 커다랗게 커질 때까지 열심히 키워서 자랑할거다. 꺄르륵 안녕하세요 ㅋ"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintStart_toStartOf="@+id/textView65"
+        app:layout_constraintTop_toBottomOf="@+id/textView63"
+        app:srcCompat="@drawable/icon_rip2" />
+
+    <android.widget.Button
+        android:id="@+id/button"
+        android:layout_width="254dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/gray_rectangle"
+        android:text="왜 그랬어요 주인님..."
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView65" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/textView65"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:srcCompat="@drawable/icon_plant_gray" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

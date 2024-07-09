@@ -1,5 +1,6 @@
 package com.example.forplant_front
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,12 @@ class RipRecordAdapter(private val itemList: List<String>) : RecyclerView.Adapte
 
         fun bind(item: String) {
             textView.text = item
+
+            itemView.setOnClickListener {
+                val context = itemView.context
+                val intent = Intent(context, RipLIstOnedayActivity::class.java)
+                context.startActivity(intent)
+            }
         }
     }
 }

@@ -54,6 +54,9 @@
             android:name=".PlantRecordLIstRipActivity"
             android:exported="false" />
         <activity
+            android:name=".RipLIstOnedayActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
