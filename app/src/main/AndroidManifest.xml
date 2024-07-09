@@ -45,6 +45,15 @@
             android:name=".ProfilemodifyActivity"
             android:exported="false" />
         <activity
+            android:name=".MypagePlantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MypageRipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlantRecordLIstRipActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>

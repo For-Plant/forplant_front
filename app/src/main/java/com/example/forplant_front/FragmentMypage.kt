@@ -25,6 +25,15 @@ class FragmentMypage: Fragment() {
             startActivity(intent)
         }
 
+        binding.textView54.setOnClickListener {
+            val intent = Intent(requireContext(), MypagePlantActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.texttitle2.setOnClickListener {
+            val intent = Intent(requireContext(), MypageRipActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 }
