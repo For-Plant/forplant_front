@@ -12,8 +12,25 @@
         android:theme="@style/Theme.Forplant_front"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".findtest_result"
             android:exported="false" />
+        <activity
+            android:name=".findtest_wait"
+            android:exported="false" />
+        <activity
+            android:name=".findtest_choice2"
+            android:exported="false" />
+        <activity
+            android:name=".findtest_choice1"
+            android:exported="false" />
+        <activity
+            android:name=".findtest_home"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".AgreeFirstActivity"
             android:exported="false" />

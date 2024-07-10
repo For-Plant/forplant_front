@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".findtest_home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:backgroundTint="#00000000"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/findtest_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="-41dp"
+            android:textAlignment="center"
+            android:textColor="@color/test_title"
+            android:layout_gravity="center"
+            android:text="나의 소울메이트 식물 찾기" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="168dp"
+        android:layout_marginBottom="45.65dp"
+        app:srcCompat="@drawable/findtest_plant" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginBottom="10dp"
+        android:text="식물을 키우고 싶은데 나는 무슨 식물을 키우는 게 좋을까?" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginBottom="10dp"
+        android:text="나에게 맞지 않는 식물을 샀다가 죽이면 어떡해?" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:text="나에게 맞는 식물을 추천받고 관리방법까지 한 번에 알고 싶어!" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="37dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/findtest_dot" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginBottom="55dp"
+        android:text="MBTI 검사 하듯이 나에게 맞는 식물 종을 알아보자!" />
+
+    <android.widget.Button
+        android:id="@+id/button"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:textColor="@color/test_txt"
+        android:background="@drawable/choice_btn_top"
+        android:text="시작하기" />
+</LinearLayout>
