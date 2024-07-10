@@ -20,7 +20,7 @@
         android:id="@+id/imageView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="127dp"
+        android:layout_marginTop="110dp"
         android:layout_gravity="center"
         android:layout_marginLeft="2.5dp"
         app:srcCompat="@drawable/camera_home_img" />
@@ -34,7 +34,7 @@
         android:textSize="16sp"
         android:textColor="@color/black"
         android:layout_marginBottom="47dp"
-        android:layout_marginTop="134.65dp"/>
+        android:layout_marginTop="114.65dp"/>
 
     <TextView
         android:id="@+id/textView24"
