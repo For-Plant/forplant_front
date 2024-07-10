@@ -1,5 +1,6 @@
 package com.example.forplant_front
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,6 +20,20 @@ class FragmentMypage: Fragment() {
     ): View? {
         binding = FragmentMypageBinding.inflate(inflater, container, false)
 
+        binding.imageView14.setOnClickListener {
+            val intent = Intent(requireContext(), ProfilemodifyActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.textView54.setOnClickListener {
+            val intent = Intent(requireContext(), MypagePlantActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.texttitle2.setOnClickListener {
+            val intent = Intent(requireContext(), MypageRipActivity::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 }
