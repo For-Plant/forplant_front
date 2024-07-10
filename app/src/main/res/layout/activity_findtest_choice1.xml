@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".findtest_choice1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:backgroundTint="#00000000"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/findtest_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="-41dp"
+            android:textAlignment="center"
+            android:textColor="@color/test_title"
+            android:layout_gravity="center"
+            android:text="나의 소울메이트 식물 찾기" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@color/test_txt"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="37dp"
+        android:text="둘 중에 나는 어디?" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="36dp"
+        android:text="친구와 여행을 가게 된 당신! 장소는 어디로 갈까?" />
+
+    <android.widget.Button
+        android:id="@+id/button2"
+        android:layout_width="312dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/choice_btn_top"
+        android:textSize="20sp"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:text="시끄러운 곳은 싫어. \n힐링할 수 있는 조용한 곳으로 가야지" />
+
+    <android.widget.Button
+        android:id="@+id/button3"
+        android:layout_width="312dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:background="@drawable/choice_btn_bottom"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="한 번도 가본 적이 업는 새로운 곳으로 가보고 싶어! 에너지가 넘치는 관광을 할 수 있는 곳으로 가야지!" />
+
+</LinearLayout>

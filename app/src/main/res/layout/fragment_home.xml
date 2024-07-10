@@ -1,17 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical"
+    android:background="@drawable/home_background"
+    >
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:text="For Plant"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:textColor="#333333"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="홈 페이지 입니다"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="마리와 함께한지 D+" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/highlight"
+            android:textSize="20sp"
+            android:text="58" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="239dp"
+        android:layout_height="239dp"
+        android:padding="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/home_img_back"
+        app:srcCompat="@drawable/home_img" />
+
+    <LinearLayout
+        android:layout_width="312dp"
+        android:layout_height="93dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="132dp"
+        android:background="@drawable/home_search_back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="24dp"
+                app:srcCompat="@drawable/home_search_icon" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="최근에 찾은 식물" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="72dp"
+            android:text="ㄴ 로즈마리" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="312dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/choice_btn_top"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/home_test_icon" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:layout_marginLeft="14dp"
+            android:textColor="@color/black"
+            android:text="나의 소울메이트 식물 알아보러 가기" />
+    </LinearLayout>
+
+
+</LinearLayout>

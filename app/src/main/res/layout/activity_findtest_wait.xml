@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".findtest_wait">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#00000000"
+            app:srcCompat="@drawable/findtest_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-41dp"
+            android:text="나의 소울메이트 식물 찾기"
+            android:textAlignment="center"
+            android:textColor="@color/test_title"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginBottom="32.65dp"
+        app:srcCompat="@drawable/findtest_wait_img1" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        app:srcCompat="@drawable/findtest_wait_img2" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text="나에게 맞는 식물을 찾고 있어요." />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text="잠시만 기다려 주시면 매칭을 도와드릴게요." />
+
+</LinearLayout>
