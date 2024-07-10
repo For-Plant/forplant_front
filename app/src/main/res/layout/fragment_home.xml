@@ -14,7 +14,6 @@
         android:text="For Plant"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="24dp"
         android:textColor="#333333"
         android:textSize="20dp" />
 
