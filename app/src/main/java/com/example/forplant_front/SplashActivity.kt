@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
             override fun run() {
                 try {
                     sleep(1000) // 1초 대기
-                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                    val intent = Intent(this@SplashActivity, LoginActivity::class.java)
                     startActivity(intent)
                     finish() // 현재 액티비티를 종료
                 } catch (e: InterruptedException) {

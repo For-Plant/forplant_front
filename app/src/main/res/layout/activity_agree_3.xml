@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="마케팅 정보 수신에 대한 동의"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:srcCompat="@drawable/btn_left" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="109dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/rectangle_grayfill"
+        android:gravity="center"
+        android:text="수집·이용 항목"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="109dp"
+        android:layout_height="78dp"
+        android:background="@drawable/rectangle_whitefill"
+        android:gravity="center"
+        android:text="휴대전화번호"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="109dp"
+        android:layout_height="78dp"
+        android:background="@drawable/rectangle_whitefill"
+        android:gravity="center"
+        android:text="이메일 주소"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="109dp"
+        android:layout_height="42dp"
+        android:background="@drawable/rectangle_grayfill"
+        android:gravity="center"
+        android:text="수집·이용 목적"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="109dp"
+        android:layout_height="78dp"
+        android:background="@drawable/rectangle_whitefill"
+        android:gravity="center"
+        android:text="회원의 SMS을\n이용하여 이벤트 및\n혜택 정보 안내"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="109dp"
+        android:layout_height="78dp"
+        android:background="@drawable/rectangle_whitefill"
+        android:gravity="center"
+        android:text="회원의 이메일을\n이용하여 이벤트 및\n혜택 정보 안내"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="109dp"
+        android:layout_height="42dp"
+        android:background="@drawable/rectangle_grayfill"
+        android:gravity="center"
+        android:text="보유기간"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="109dp"
+        android:layout_height="155dp"
+        android:background="@drawable/rectangle_whitefill"
+        android:gravity="center"
+        android:text="회원탈퇴 및 동의\n철회 시 까지"
+        android:textColor="@color/deepgray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toEndOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="본 동의를 거부하실 수 있습니다. 다만 거부 시 동의를 통해 제공\n가능한 이벤트 및 혜택 정보, 신규매물, 분양정보등의 안내를 받\n아 보실 수 없습니다."
+        android:textColor="@color/deepgray"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

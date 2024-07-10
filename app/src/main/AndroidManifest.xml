@@ -13,9 +13,49 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
-
+            android:exported="false" />
+        <activity
+            android:name=".AgreeFirstActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Agree1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Agree2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Agree3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfilenewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IdfoundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordfoundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashwelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfilemodifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MypagePlantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MypageRipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlantRecordLIstRipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RipLIstOnedayActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
