@@ -1,5 +1,6 @@
 package com.example.forplant_front
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,6 +20,10 @@ class FragmentHome: Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        binding.homeTestBtn.setOnClickListener {
+            val intent = Intent(activity,findtest_home::class.java)
+            startActivity(intent)
+        }
         return binding.root
     }
 }

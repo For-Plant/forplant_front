@@ -45,7 +45,7 @@
         android:text="둘 중에 나는 어디?" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/findtest_Q"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -55,7 +55,7 @@
         android:text="친구와 여행을 가게 된 당신! 장소는 어디로 갈까?" />
 
     <android.widget.Button
-        android:id="@+id/button2"
+        android:id="@+id/findtest_A_top"
         android:layout_width="312dp"
         android:layout_height="240dp"
         android:layout_gravity="center"
@@ -67,7 +67,7 @@
         android:text="시끄러운 곳은 싫어. \n힐링할 수 있는 조용한 곳으로 가야지" />
 
     <android.widget.Button
-        android:id="@+id/button3"
+        android:id="@+id/findtest_A_bottom"
         android:layout_width="312dp"
         android:layout_height="240dp"
         android:layout_gravity="center"

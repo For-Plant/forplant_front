@@ -91,7 +91,7 @@
         android:text="MBTI 검사 하듯이 나에게 맞는 식물 종을 알아보자!" />
 
     <android.widget.Button
-        android:id="@+id/button"
+        android:id="@+id/findtest_next_btn"
         android:layout_width="324dp"
         android:layout_height="56dp"
         android:layout_gravity="center"
