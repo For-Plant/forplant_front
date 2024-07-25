@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".findtest_result">
+    tools:context=".camera_result">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="44dp"
@@ -26,91 +27,100 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="-41dp"
-            android:text="나의 소울메이트 식물 찾기"
+            android:text="식물 이름"
             android:textAlignment="center"
             android:textColor="@color/test_title"
             android:textSize="20sp" />
-
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/camera_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="'식물이름'으로 보여요!"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/camera_name_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:text="'식물이름'에 대해 아래에서 살펴봅시다." />
+
     <ImageView
-        android:id="@+id/findtest_result_img"
+        android:id="@+id/camera_plant_img"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/findtest_result_img_back"
         app:srcCompat="@drawable/findtest_plant" />
 
     <TextView
-        android:id="@+id/findtest_name"
+        android:id="@+id/textView69"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="6dp"
-        android:text="식물 이름" />
-
-    <TextView
-        android:id="@+id/findtest_ex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="~~~~~한 당신에게 딱 맞을 것 같아요!"
+        android:textSize="16sp"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/findtest_name_more"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="'식물 이름'에 대해 아래에서 살펴봅시다."
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:layout_marginBottom="34dp"
-        android:layout_marginTop="15dp"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="키우는 방법"
         android:layout_marginBottom="11dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16sp"/>
+        android:text="키우는 방법" />
 
     <TextView
-        android:id="@+id/findtest_grow"
+        android:id="@+id/camera_grow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="어쩌구저쩌구"
-        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:text="어쩌고" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/textView71"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="키울 때 있으면 좋을 물건"
-        android:textAlignment="center"
-        android:layout_marginTop="75dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="11dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:text="주로 자라는 환경" />
 
     <TextView
-        android:id="@+id/findtest_thing"
+        android:id="@+id/camera_plant_ex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="식물 영양 주사기"
-        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:text="저쩌구" />
+
+    <TextView
+        android:id="@+id/textView73"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="11dp"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:text="키울 때 있으면 좋을 물품들" />
+
+    <TextView
+        android:id="@+id/camera_thing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:text="식물 영양 주사기" />
 
 
 </LinearLayout>
