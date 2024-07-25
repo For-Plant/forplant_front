@@ -5,7 +5,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
@@ -44,6 +44,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_record_tv" />
 
+        <ImageButton
+            android:id="@+id/view_trash_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_trash"
+            android:background="@android:color/transparent"
+            android:layout_marginStart="106dp"
+            app:layout_constraintStart_toEndOf="@id/detail_plantname_tv"
+            app:layout_constraintTop_toTopOf="@id/detail_plantname_tv"
+            app:layout_constraintBottom_toBottomOf="@id/detail_plantname_tv" />
+
         <ImageView
             android:id="@+id/detail_plant_iv"
             android:layout_width="wrap_content"
@@ -66,14 +77,14 @@
             app:layout_constraintTop_toTopOf="@id/detail_plant_iv"
             app:layout_constraintBottom_toBottomOf="@id/detail_plant_iv" />
 
-        <EditText
+        <TextView
             android:id="@+id/detail_write_et"
             android:layout_width="match_parent"
             android:layout_height="424dp"
             android:background="@drawable/border_maincolor"
             android:paddingHorizontal="19dp"
             android:paddingVertical="29dp"
-            android:hint="오늘의 식물 일지를 작성해주세요."
+            android:text="오늘은 식목일을 맞이하여 오래 키울 수 있는 식물을 하나 샀다. 선인장을 샀는데, 쪼끄만 게 너무 귀엽다. 이름은 선쪼꼬. 커다랗게 커질 때까지 열심히 키워서 자랑할거다. 꺄르륵 안녕하세요 ㅋ"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:layout_marginHorizontal="24dp"
@@ -82,39 +93,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detail_plant_iv" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/detail_noactive_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="등록하기"
-            android:textSize="16dp"
-            android:textColor="@color/black"
-            android:background="@drawable/background_lightgray"
-            android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="75dp"
-            android:layout_marginBottom="50dp"
-            android:paddingVertical="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detail_write_et"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/detail_active_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="등록하기"
-            android:textSize="16dp"
-            android:textColor="@color/black"
-            android:background="@drawable/background_highlight"
-            android:layout_marginHorizontal="18dp"
-            android:layout_marginTop="75dp"
-            android:paddingVertical="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detail_write_et"
-            android:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

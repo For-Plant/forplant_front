@@ -28,16 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/ic_more"
-        android:background="@android:color/transparent"
-        android:layout_marginStart="124dp"
-        app:layout_constraintStart_toEndOf="@id/record_record_tv"
-        app:layout_constraintTop_toTopOf="@id/record_record_tv"
-        app:layout_constraintBottom_toBottomOf="@id/record_record_tv" />
-
     <TextView
         android:id="@+id/record_plantname_tv"
         android:layout_width="wrap_content"
