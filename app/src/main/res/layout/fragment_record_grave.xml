@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/grave_back_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_back"
+        android:background="@android:color/transparent"
+        android:layout_marginStart="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/grave_record_tv"
+        app:layout_constraintBottom_toBottomOf="@id/grave_record_tv" />
+
+    <TextView
+        android:id="@+id/grave_record_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식물 부고 처리"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/grave_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식물의 이름"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="29dp"
+        android:layout_marginStart="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_record_tv" />
+
+    <TextView
+        android:id="@+id/grave_namecontent_tv"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/border_maincolor_10dp"
+        android:paddingStart="13dp"
+        android:paddingVertical="10dp"
+        android:text="식물 이름"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_name_tv" />
+
+    <TextView
+        android:id="@+id/grave_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식물이 무지개더미에 들어간 날을 알려주세요."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="39dp"
+        android:layout_marginStart="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_namecontent_tv" />
+
+    <EditText
+        android:id="@+id/grave_date_et"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/border_maincolor_10dp"
+        android:paddingStart="13dp"
+        android:hint="Ex. 2024-03-04"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_date_tv" />
+
+    <TextView
+        android:id="@+id/grave_reason_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식물이 무지개더미에 들어간 이유를 적어주세요."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="39dp"
+        android:layout_marginStart="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_date_et" />
+
+    <EditText
+        android:id="@+id/grave_reason_et"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/border_maincolor_10dp"
+        android:paddingStart="13dp"
+        android:hint="이유 입력"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_reason_tv" />
+
+    <TextView
+        android:id="@+id/grave_reasondetail_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50글자 이내로 입력해주세요."
+        android:textSize="12sp"
+        android:textColor="@color/deepgray"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_reason_et" />
+
+    <TextView
+        android:id="@+id/grave_letter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이 식물의 추모 편지를 작성해주세요."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_reasondetail_tv" />
+
+    <EditText
+        android:id="@+id/grave_letter_et"
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:background="@drawable/border_maincolor"
+        android:paddingHorizontal="13dp"
+        android:paddingVertical="7dp"
+        android:hint="EX. 고기친구야 안녕.. 너를 고기와 함께 먹으려고 산 지 어언 2개월이 지났구나.."
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginTop="7dp"
+        android:gravity="start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grave_letter_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/grave_add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="무지개더미에 넣기"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:background="@drawable/background_highlight"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginBottom="16dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
