@@ -42,7 +42,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pose_rv"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="25dp"
@@ -55,6 +55,7 @@
 
     <TextView
         android:id="@+id/textView70"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="아직 무지개더미에 들어간 식물이 없어요"
