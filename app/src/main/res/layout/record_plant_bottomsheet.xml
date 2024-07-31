@@ -5,8 +5,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btmst_addplant_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
         android:text="식물 수정하기"
         android:textSize="16dp"
         android:textColor="@color/black"
@@ -20,8 +20,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btmst_setrep_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
         android:text="일지 추가하기"
         android:textSize="16dp"
         android:textColor="@color/black"

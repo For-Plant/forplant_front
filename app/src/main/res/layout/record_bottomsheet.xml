@@ -6,8 +6,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btmst_addplant_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
         android:text="식물 추가하기"
         android:textSize="16dp"
         android:textColor="@color/black"
@@ -21,8 +21,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btmst_setrep_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
         android:text="대표 식물 지정하기"
         android:textSize="16dp"
         android:textColor="@color/black"
@@ -36,8 +36,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btmst_deleteplant_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
         android:text="식물 삭제하기"
         android:textSize="16dp"
         android:textColor="@color/error"
@@ -51,8 +51,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btmst_deathplant_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
         android:text="식물 부고처리하기"
         android:textSize="16dp"
         android:textColor="@color/error"
