@@ -3,15 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/message_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="채팅 페이지 입니다"
+        android:text="AI 채팅"
+        android:textSize="20sp"
         android:textColor="@color/black"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/message_plant_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iv_illplant"
+        android:layout_marginTop="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_title_tv" />
+
+    <TextView
+        android:id="@+id/message_curi_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이 식물이 궁금해!"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="134.65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_plant_iv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AI와 채팅해서 식물에 대해 알아보자"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="47dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_curi_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="채팅하기"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:background="@drawable/background_highlight"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/record_plus_btn"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@drawable/ic_more"
+        android:background="@android:color/transparent"
+        android:layout_marginStart="124dp"
+        app:layout_constraintStart_toEndOf="@id/record_record_tv"
+        app:layout_constraintTop_toTopOf="@id/record_record_tv"
+        app:layout_constraintBottom_toBottomOf="@id/record_record_tv" />
+
     <TextView
         android:id="@+id/record_plantname_tv"
         android:layout_width="wrap_content"
@@ -40,6 +51,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/record_record_tv" />
 
+    <ImageView
+        android:id="@+id/record_plant_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iv_defplant"
+        android:layout_marginTop="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/record_plantname_tv" />
+
     <TextView
         android:id="@+id/record_plant_tv"
         android:layout_width="wrap_content"
@@ -47,43 +68,21 @@
         android:text="나의 식물 일지"
         android:textColor="@color/black"
         android:textSize="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="29dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/record_plantname_tv" />
+        app:layout_constraintTop_toBottomOf="@id/record_plant_iv" />
 
-    <ImageButton
-        android:id="@+id/record_write_btn"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/ic_edit"
-        android:background="@android:color/transparent"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/record_plant_tv"
-        app:layout_constraintBottom_toBottomOf="@id/record_plant_tv" />
-
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/record_record_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_record"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/record_plant_tv">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/record_record_rv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:listitem="@layout/item_record"
-                tools:ignore="MissingConstraints" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@id/record_plant_tv"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
