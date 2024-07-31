@@ -92,10 +92,12 @@
 
     <android.widget.Button
         android:id="@+id/findtest_next_btn"
-        android:layout_width="324dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
         android:layout_height="56dp"
         android:layout_gravity="center"
         android:textColor="@color/test_txt"
-        android:background="@drawable/choice_btn_top"
+        android:background="@drawable/test_btn"
         android:text="시작하기" />
 </LinearLayout>
