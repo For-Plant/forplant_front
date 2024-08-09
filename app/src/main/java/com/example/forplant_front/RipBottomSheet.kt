@@ -6,50 +6,38 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.forplant_front.databinding.ActivityMypageRipBinding
 import com.example.forplant_front.databinding.RipbottomsheetdialogBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class RipBottomSheet : BottomSheetDialogFragment() {
-    private lateinit var recyclerView: RecyclerView
-    private var adapter: RipRecordAdapter? = null
+class RipBottomSheet : AppCompatActivity() {
+    private lateinit var adapter: RipRecordAdapter
     private lateinit var binding: RipbottomsheetdialogBinding
-    lateinit var onItemSelected: (List<String>) -> Unit
-    private var initialY = 0f
 
-//    // 선택된 아이템을 반환하는 메소드
-//    private val selectedItems = mutableListOf<String>()
-//
-//    fun getSelectedItems(): List<String> {
-//        return adapter?.getSelectedItems() ?: emptyList()
-//    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = RipbottomsheetdialogBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    private fun getBinding(view: View): RipbottomsheetdialogBinding {
-        return RipbottomsheetdialogBinding.bind(view)
+        binding.imageView2.setOnClickListener {
+            finish()
+        }
+        val itemList = listOf("아이템 1", "아이템 2", "아이템 3","아이템 4")
+        setupRecyclerView(itemList)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.ripbottomsheetdialog, container, false)
-        binding = getBinding(view)
+    private fun setupRecyclerView(itemList: List<String>) {
+        // RecyclerView의 레이아웃 매니저 설정
+        binding.poseRv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        recyclerView = view.findViewById(R.id.pose_rv)
-        adapter = RipRecordAdapter(this)
-
-        recyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-
-        recyclerView.adapter = adapter
-
-        Log.d("RipBottomSheet", "RecyclerView and Adapter set")
-
-        return view
+        // RecyclerView의 어댑터 설정
+        adapter = RipRecordAdapter(itemList)
+        binding.poseRv.adapter = adapter
     }
-
 }

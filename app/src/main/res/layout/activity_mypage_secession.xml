@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="회원탈퇴"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:srcCompat="@drawable/btn_left" />
+
+
+    <TextView
+        android:id="@+id/profiletext"
+        android:layout_width="wrap_content"
+        android:layout_height="192dp"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginTop="20dp"
+        android:text="1. 회원 탈퇴 시, 현재 로그인된 아이디는 즉시 탈퇴 처리됩니다.
+            \n\n2. 회원 탈퇴 시, 회원 전용 웹 서비스 이용이 불가합니다.
+            \n\n3. 탈퇴 시 회원 정보 및 찜 서비스, 등록한 게시물 이용 기록이\n    모두 삭제됩니다.
+            \n\n4. 회원정보 및 서비스 이용 기록은 모두 삭제되며, 삭제된 데이터\n     는 복구되지 않습니다.
+            \n\n5. 광고를 위한 매물이 등록되어 있을 경우, 탈퇴 시 모든 정보는\n     삭제 처리됩니다."
+        android:textColor="@color/gray"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <android.widget.Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/gray_rectangle"
+        android:text="탈퇴하기"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="회원 탈퇴 전,\n아래 내용을 꼭 확인해주세요."
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="탈퇴사유"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/profiletext"
+        app:layout_constraintTop_toBottomOf="@+id/profiletext" />
+
+
+    <RadioGroup
+        android:id="@+id/radio_graphics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:checkedButton="@id/radioButton_total"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/textView53"
+        app:layout_constraintTop_toBottomOf="@+id/textView53">
+
+        <android.widget.RadioButton
+            android:id="@+id/radioButton_total"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:button="@drawable/radiobutton_radiobutton01"
+            android:text="더 이상 이용하지 않음"
+            android:paddingLeft="8dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <android.widget.RadioButton
+            android:id="@+id/radioButton_1"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:button="@drawable/radiobutton_radiobutton01"
+            android:text="탈퇴 후 재가입"
+            android:paddingLeft="8dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <android.widget.RadioButton
+            android:id="@+id/radioButton_2"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:button="@drawable/radiobutton_radiobutton01"
+            android:text="사용하기 불편함"
+            android:paddingLeft="8dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+        <android.widget.RadioButton
+            android:id="@+id/radioButton_3"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:button="@drawable/radiobutton_radiobutton01"
+            android:text="원하는 정보가 없음"
+            android:paddingLeft="8dp"
+            android:textColor="@color/black"
+            android:textSize="12dp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="324dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/anotherprofileroudradius"
+        android:gravity="top|start"
+        android:paddingLeft="12dp"
+        android:paddingTop="12dp"
+        android:hint="다른 사유가 있다면 입력해주세요"
+        android:textColor="@color/gray"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/radio_graphics"
+        app:layout_constraintTop_toBottomOf="@+id/radio_graphics" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="위 내용을 확인하고 탈퇴에 동의합니다."
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView25"
+        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textView54"
+        app:layout_constraintStart_toStartOf="@+id/textPassword"
+        app:layout_constraintTop_toTopOf="@+id/textView54"
+        app:srcCompat="@drawable/btn_checkbox" />
+</androidx.constraintlayout.widget.ConstraintLayout>

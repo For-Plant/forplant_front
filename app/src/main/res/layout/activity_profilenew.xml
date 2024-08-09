@@ -128,15 +128,52 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/textView34"
+            android:id="@+id/nametextView34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="닉네임을 설정해주세요."
+            android:text="이름을 설정해주세요."
             android:textSize="16dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/textView33"
             app:layout_constraintTop_toBottomOf="@+id/imageView18" />
+
+        <EditText
+            android:id="@+id/nameIdedittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center|start"
+            android:paddingLeft="12dp"
+            android:hint="이름 입력"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:background="@drawable/green_rectangle2"
+            app:layout_constraintStart_toStartOf="@+id/nametextView34"
+            app:layout_constraintTop_toBottomOf="@+id/nametextView34" />
+
+        <TextView
+            android:id="@+id/nametextView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="7dp"
+            android:text="10글자 이내로 입력해주세요."
+            android:textSize="12dp"
+            android:textColor="@color/deepgray"
+            app:layout_constraintStart_toStartOf="@+id/nameIdedittext"
+            app:layout_constraintTop_toBottomOf="@+id/nameIdedittext" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="닉네임을 설정해주세요."
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/textView33"
+            app:layout_constraintTop_toBottomOf="@+id/nametextView36" />
 
         <EditText
             android:id="@+id/Idedittext"

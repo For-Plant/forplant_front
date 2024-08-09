@@ -34,6 +34,17 @@ class FragmentMypage: Fragment() {
             val intent = Intent(requireContext(), MypageRipActivity::class.java)
             startActivity(intent)
         }
+
+        binding.texttitle4.setOnClickListener {
+            val intent = Intent(requireContext(), MypageSeccsionActivity::class.java)
+            startActivity(intent)
+        }
+        binding.imageView32.setOnClickListener {
+            val intent = Intent(requireContext(), LoginActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            startActivity(intent)
+        }
         return binding.root
     }
 }

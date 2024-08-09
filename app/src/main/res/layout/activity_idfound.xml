@@ -97,7 +97,7 @@
         android:layout_marginTop="34dp"
         android:background="@drawable/green_rectangle2"
         android:gravity="center|start"
-        android:hint="닉네임 입력"
+        android:hint="이름 입력"
         android:paddingLeft="12dp"
         android:textColor="@color/black"
         android:textSize="14dp"
@@ -167,6 +167,19 @@
             android:textSize="16dp" />
 
     </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView72"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
+        android:text="아이디를 찾을 수 없습니다."
+        android:textColor="@color/error"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
