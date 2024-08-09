@@ -23,7 +23,7 @@
         android:text="기록"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,16 +50,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/record_record_tv" />
-
-    <ImageView
-        android:id="@+id/record_plant_iv"
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/record_plant_cv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/iv_defplant"
         android:layout_marginTop="19dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/record_plantname_tv" />
+        app:layout_constraintTop_toBottomOf="@id/record_plantname_tv">
+
+        <ImageView
+            android:id="@+id/record_plant_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iv_defplant" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/record_plant_tv"
@@ -71,7 +79,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="29dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/record_plant_iv" />
+        app:layout_constraintTop_toBottomOf="@id/record_plant_cv" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/record_record_rv"
