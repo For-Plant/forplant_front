@@ -50,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
                                 editor.putString("password", password)
                                 editor.putString("jwt", token)
                                 editor.apply()
+//                                Log.d("logintoken", token) #이거 지금 null값이라 주석 풀면 안됨
                                 val intent =
                                     Intent(this@LoginActivity, MainActivity::class.java)
                                 startActivity(intent)
