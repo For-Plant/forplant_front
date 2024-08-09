@@ -32,46 +32,46 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        binding.button.setOnClickListener {
-//            val id = binding.IDtext.text.toString()
-//            val password = binding.Passwordtext.text.toString()
-//
-//            val call = RetrofitObject.getRetrofitService.login(RetrofitClient2.Requestlogin(id, password))
-//            call.enqueue(object : Callback<RetrofitClient2.Responselogin> {
-//                override fun onResponse(call: Call<RetrofitClient2.Responselogin>, response: Response<RetrofitClient2.Responselogin>) {
-//                    Log.d("Retrofit21", response.toString())
-//                    if (response.isSuccessful) {
-//                        val response = response.body()
-//                        Log.d("Retrofit2", response.toString())
-//                        if(response != null){
-//                            if(response.isSuccess) {
-//                                val token = response.result
-//                                editor.putString("member_id", id)
-//                                editor.putString("password", password)
-//                                editor.putString("jwt", token)
-//                                editor.apply()
-////                                Log.d("logintoken", token) #이거 지금 null값이라 주석 풀면 안됨
-//                                val intent =
-//                                    Intent(this@LoginActivity, MainActivity::class.java)
-//                                startActivity(intent)
-//                            }else{
-//                                Toast.makeText(this@LoginActivity, response.message, Toast.LENGTH_SHORT).show()
-//                            }
-//                        }
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<RetrofitClient2.Responselogin>, t: Throwable) {
-//                    val errorMessage = "Call Failed: ${t.message}"
-//                    Log.d("Retrofit", errorMessage)
-//                }
-//            })
-//        }
         binding.button.setOnClickListener {
-            val intent =
-                Intent(this@LoginActivity, MainActivity::class.java)
-            startActivity(intent)
+            val id = binding.IDtext.text.toString()
+            val password = binding.Passwordtext.text.toString()
+
+            val call = RetrofitObject.getRetrofitService.login(RetrofitClient2.Requestlogin(id, password))
+            call.enqueue(object : Callback<RetrofitClient2.Responselogin> {
+                override fun onResponse(call: Call<RetrofitClient2.Responselogin>, response: Response<RetrofitClient2.Responselogin>) {
+                    Log.d("Retrofit21", response.toString())
+                    if (response.isSuccessful) {
+                        val response = response.body()
+                        Log.d("Retrofit2", response.toString())
+                        if(response != null){
+                            if(response.isSuccess) {
+                                val token = response.result
+                                editor.putString("member_id", id)
+                                editor.putString("password", password)
+                                editor.putString("jwt", token)
+                                editor.apply()
+                                Log.d("logintoken", token)
+                                val intent =
+                                    Intent(this@LoginActivity, MainActivity::class.java)
+                                startActivity(intent)
+                            }else{
+                                Toast.makeText(this@LoginActivity, response.message, Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<RetrofitClient2.Responselogin>, t: Throwable) {
+                    val errorMessage = "Call Failed: ${t.message}"
+                    Log.d("Retrofit", errorMessage)
+                }
+            })
         }
+//        binding.button.setOnClickListener {
+//            val intent =
+//                Intent(this@LoginActivity, MainActivity::class.java)
+//            startActivity(intent)
+//        }
         binding.textView19.setOnClickListener {
             val intent = Intent(this, IdfoundActivity::class.java)
             startActivity(intent)
