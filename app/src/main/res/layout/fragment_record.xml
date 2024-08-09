@@ -4,8 +4,9 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/record_record_cl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
@@ -16,7 +17,7 @@
             android:text="기록"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +33,18 @@
             app:layout_constraintTop_toTopOf="@id/record_record_tv"
             app:layout_constraintBottom_toBottomOf="@id/record_record_tv" />
 
+        <TextView
+            android:id="@+id/record_noplant_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아직 등록된 식물이 없어요"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="350dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/record_record_tv" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +52,8 @@
             android:layout_marginTop="13dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/record_record_tv" />
+            app:layout_constraintTop_toBottomOf="@id/record_record_tv"
+            android:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
