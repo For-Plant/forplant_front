@@ -37,6 +37,7 @@
         android:layout_marginTop="18dp"
         android:background="@drawable/login_green"
         android:gravity="center|start"
+        android:inputType="textPassword"
         android:hint="비밀번호 입력"
         android:paddingLeft="12dp"
         android:textColor="@color/black"
