@@ -217,12 +217,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
-            android:gravity="center|start"
-            android:paddingLeft="12dp"
-            android:hint="아이디 입력"
-            android:textSize="14dp"
-            android:textColor="@color/black"
             android:background="@drawable/green_rectangle2"
+            android:gravity="center|start"
+            android:hint="아이디 입력"
+            android:paddingLeft="12dp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
             app:layout_constraintStart_toStartOf="@+id/textView37"
             app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
@@ -239,15 +239,41 @@
             app:layout_constraintTop_toBottomOf="@+id/Idedittext2" />
 
         <TextView
+            android:id="@+id/textView383"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="7dp"
+            android:text="아이디가 존재합니다. 다른 아이디를 입력하세요."
+            android:textSize="12dp"
+            android:textColor="@color/error"
+            app:layout_constraintStart_toStartOf="@+id/Idedittext2"
+            app:layout_constraintTop_toBottomOf="@+id/Idedittext2" />
+
+        <TextView
+            android:id="@+id/textView382"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="7dp"
+            android:text="사용가능한 아이디입니다."
+            android:textSize="12dp"
+            android:textColor="@color/maincolor"
+            app:layout_constraintStart_toStartOf="@+id/Idedittext2"
+            app:layout_constraintTop_toBottomOf="@+id/Idedittext2" />
+
+        <TextView
             android:id="@+id/textView39"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="39dp"
             android:text="비밀번호를 설정해주세요."
             android:textColor="@color/black"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="@+id/textView33"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+            app:layout_constraintTop_toBottomOf="@+id/Idedittext2" />
 
         <EditText
             android:id="@+id/Idedittext3"
@@ -258,6 +284,7 @@
             android:paddingLeft="12dp"
             android:hint="비밀번호 입력"
             android:textSize="14dp"
+            android:inputType="textPassword"
             android:textColor="@color/black"
             android:background="@drawable/green_rectangle2"
             app:layout_constraintStart_toStartOf="@+id/textView39"
@@ -275,19 +302,33 @@
             app:layout_constraintStart_toStartOf="@+id/Idedittext3"
             app:layout_constraintTop_toBottomOf="@+id/Idedittext3" />
 
+        <TextView
+            android:id="@+id/textView404"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="7dp"
+            android:text="비밀번호 조건이 일치하지 않아요"
+            android:textSize="12dp"
+            android:textColor="@color/error"
+            app:layout_constraintStart_toStartOf="@+id/Idedittext3"
+            app:layout_constraintTop_toBottomOf="@+id/Idedittext3" />
+
         <EditText
             android:id="@+id/Idedittext4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="26dp"
             android:background="@drawable/green_rectangle2"
             android:gravity="center|start"
             android:hint="비밀번호 확인"
+            android:inputType="textPassword"
             android:paddingLeft="12dp"
             android:textColor="@color/black"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="@+id/Idedittext3"
-            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+            app:layout_constraintTop_toBottomOf="@+id/Idedittext3" />
 
         <TextView
             android:id="@+id/passwordright"
