@@ -30,4 +30,14 @@ interface RetrofitAPI {
 
     @GET("/mypage/main")
     fun getmypage(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetmypage>
+
+    @GET("/mypage/profile")
+    fun getprofile(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetprofile>
+
+    @Multipart
+    @PUT("/mypage/profile")
+    fun modifyprofile(@Header("x-access-token") token: String,
+                      @Part("nickname") nickname: RequestBody?,
+                      @Part image: MultipartBody.Part?,
+                      @Part("password") password: RequestBody): Call<RetrofitClient2.Responsemodifyprofile>
 }

@@ -99,6 +99,67 @@ class FragmentMypage: Fragment() {
                         if (nickName != null) {
                             binding.textView51.text = nickName
                         }
+
+                        val reprsentPlant = it.representPlant
+                        if (reprsentPlant != null) {
+                            binding.textViewnot.visibility= View.GONE
+                            binding.represnetLayout.visibility= View.VISIBLE
+                            binding.textView71.text = reprsentPlant.nickname
+//                            binding.textView74.text = reprsentPlant.nickname
+                        }
+                        else{
+                            binding.textViewnot.visibility= View.VISIBLE
+                            binding.represnetLayout.visibility= View.GONE
+                        }
+                        val alivePlantcount= it.alivePlantsCount
+                        val alivePlant= it.alivePlants
+                        if (alivePlantcount==1) {
+                            binding.recordPlant.visibility= View.GONE
+                            binding.plantrecord1.visibility= View.VISIBLE
+                            binding.plantrecord2.visibility= View.GONE
+                            binding.textView55.text = alivePlant[0].nickname
+                            binding.textView56.text = alivePlant[0].name
+                        }
+                        else if(alivePlantcount==2){
+                            binding.recordPlant.visibility= View.GONE
+                            binding.plantrecord1.visibility= View.VISIBLE
+                            binding.plantrecord2.visibility= View.VISIBLE
+                            binding.textView55.text = alivePlant[0].nickname
+                            binding.textView56.text = alivePlant[0].name
+                            binding.textView57.text = alivePlant[1].nickname
+                            binding.textView58.text = alivePlant[1].name
+                        }
+                        else{
+                            binding.recordPlant.visibility= View.VISIBLE
+                            binding.plantrecord1.visibility= View.GONE
+                            binding.plantrecord2.visibility= View.GONE
+                        }
+                        val deadPlantCount= it.deadPlantsCount
+                        val deadPlant= it.deadPlants
+                        if (deadPlantCount==1) {
+                            binding.textView67.visibility= View.GONE
+                            binding.plantrecord3.visibility= View.VISIBLE
+                            binding.plantrecord4.visibility= View.GONE
+                            binding.textView59.text = deadPlant[0].nickname
+                            binding.textView60.text = deadPlant[0].plantCreatedAt
+                            binding.textView77.text = deadPlant[0].deadCreatedAt
+                        }
+                        else if(deadPlantCount==2){
+                            binding.textView67.visibility= View.GONE
+                            binding.plantrecord3.visibility= View.VISIBLE
+                            binding.plantrecord4.visibility= View.VISIBLE
+                            binding.textView59.text = deadPlant[0].nickname
+                            binding.textView60.text = deadPlant[0].plantCreatedAt
+                            binding.textView77.text = deadPlant[0].deadCreatedAt
+                            binding.textView61.text = deadPlant[1].nickname
+                            binding.textView62.text = deadPlant[1].plantCreatedAt
+                            binding.textView62.text = deadPlant[1].deadCreatedAt
+                        }
+                        else{
+                            binding.textView67.visibility= View.VISIBLE
+                            binding.plantrecord3.visibility= View.GONE
+                            binding.plantrecord4.visibility= View.GONE
+                        }
                     }
                 } else {
                     Toast.makeText(

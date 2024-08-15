@@ -153,4 +153,47 @@ class RetrofitClient2 {
         @SerializedName("dead_created_at")
         val deadCreatedAt: String
     )
+
+    data class Responsegetprofile(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: GetprofileResult,
+    )
+    data class GetprofileResult(
+        @SerializedName("member_id")
+        val member_id: String,
+        @SerializedName("nickname")
+        val nickname: String,
+        @SerializedName("profile_img")
+        val profile_img: String,
+        @SerializedName("password")
+        val password: String
+    )
+
+    data class Responsemodifyprofile(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: ModifyResult,
+    )
+
+    data class ModifyResult(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: GetprofileResult,
+    )
 }
