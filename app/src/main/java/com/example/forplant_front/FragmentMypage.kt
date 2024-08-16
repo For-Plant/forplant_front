@@ -76,7 +76,7 @@ class FragmentMypage: Fragment() {
                     Log.d("Retrofit4", response.toString())
                     // response.body()를 통해 Responsegetmypage 객체에 접근
                     val profileData = response.body()?.result
-
+                    Log.d("Retrofit41", profileData.toString())
                     profileData?.let {
                         // 유저의 memberId를 설정
                         binding.textView52.text = it.user.memberId
@@ -95,19 +95,21 @@ class FragmentMypage: Fragment() {
                         }
 
                         // 닉네임을 가져와서 SharedPreferences에 저장
-                        val nickName = it.user.nickname
-                        if (nickName != null) {
-                            binding.textView51.text = nickName
+                        val userName = it.user.username
+                        if (userName != null) {
+                            binding.textView51.text = userName
                         }
 
                         val reprsentPlant = it.representPlant
-                        if (reprsentPlant != null) {
+                        if (reprsentPlant != null &&
+                            reprsentPlant.name != null &&
+                            reprsentPlant.nickname != null &&
+                            reprsentPlant.createdAt != null) {
+
                             binding.textViewnot.visibility= View.GONE
                             binding.represnetLayout.visibility= View.VISIBLE
                             binding.textView71.text = reprsentPlant.nickname
-//                            binding.textView74.text = reprsentPlant.nickname
-                        }
-                        else{
+                        } else {
                             binding.textViewnot.visibility= View.VISIBLE
                             binding.represnetLayout.visibility= View.GONE
                         }
@@ -120,7 +122,7 @@ class FragmentMypage: Fragment() {
                             binding.textView55.text = alivePlant[0].nickname
                             binding.textView56.text = alivePlant[0].name
                         }
-                        else if(alivePlantcount==2){
+                        else if(alivePlantcount>=2){
                             binding.recordPlant.visibility= View.GONE
                             binding.plantrecord1.visibility= View.VISIBLE
                             binding.plantrecord2.visibility= View.VISIBLE
@@ -144,7 +146,7 @@ class FragmentMypage: Fragment() {
                             binding.textView60.text = deadPlant[0].plantCreatedAt
                             binding.textView77.text = deadPlant[0].deadCreatedAt
                         }
-                        else if(deadPlantCount==2){
+                        else if(deadPlantCount>=2){
                             binding.textView67.visibility= View.GONE
                             binding.plantrecord3.visibility= View.VISIBLE
                             binding.plantrecord4.visibility= View.VISIBLE

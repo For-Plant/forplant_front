@@ -31,6 +31,9 @@ interface RetrofitAPI {
     @GET("/mypage/main")
     fun getmypage(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetmypage>
 
+    @GET("/mypage/alive-plants")
+    fun getmypageplant(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetmypageplant>
+
     @GET("/mypage/profile")
     fun getprofile(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetprofile>
 

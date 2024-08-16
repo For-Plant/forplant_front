@@ -93,6 +93,17 @@ class RetrofitClient2 {
         val result: Int,
     )
 
+    data class Responsegetmypageplant(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: List<Plant>,
+    )
+
     data class Responsegetmypage(
         @SerializedName("isSuccess")
         val isSuccess: Boolean,
@@ -121,12 +132,10 @@ class RetrofitClient2 {
     data class User(
         @SerializedName("member_id")
         val memberId: String,
-        @SerializedName("nickname")
-        val nickname: String,
+        @SerializedName("username")
+        val username: String,
         @SerializedName("profile_img")
-        val profileImg: String,
-        @SerializedName("password")
-        val password: String
+        val profileImg: String
     )
 
     data class RepresentPlant(
@@ -194,6 +203,6 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: GetprofileResult,
+        val result: EmptyResult
     )
 }
