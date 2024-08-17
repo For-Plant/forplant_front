@@ -5,8 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.forplant_front.connection.RetrofitClient2
 
-class PlantListsAdapter(private val itemList: List<String>) : RecyclerView.Adapter<PlantListsAdapter.ViewHolder>() {
+class PlantListsAdapter(private val itemList: List<RetrofitClient2.Plant>) : RecyclerView.Adapter<PlantListsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_plantlists, parent, false)
@@ -24,9 +25,11 @@ class PlantListsAdapter(private val itemList: List<String>) : RecyclerView.Adapt
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val textView: TextView = itemView.findViewById(R.id.textView57)
+        private val textView2: TextView = itemView.findViewById(R.id.textView58)
 
-        fun bind(item: String) {
-            textView.text = item
+        fun bind(item: RetrofitClient2.Plant) {
+            textView.text = item.nickname
+            textView2.text = item.name
         }
     }
 }
