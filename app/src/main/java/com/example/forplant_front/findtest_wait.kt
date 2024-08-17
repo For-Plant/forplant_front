@@ -12,8 +12,12 @@ class findtest_wait : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_findtest_wait)
 
+        // 이전 액티비티에서 넘어온 answersMap 받기
+        val answersMap = intent.getSerializableExtra("answersMap") as? HashMap<String, Int>
+
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this,findtest_result::class.java)
+            intent.putExtra("answersMap", answersMap)
             startActivity(intent)
             finish()
         },3000)

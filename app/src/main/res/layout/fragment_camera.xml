@@ -23,7 +23,7 @@
         android:layout_marginTop="110dp"
         android:layout_gravity="center"
         android:layout_marginLeft="2.5dp"
-        app:srcCompat="@drawable/camera_home_img" />
+        app:srcCompat="@drawable/camera_home_img_2" />
 
     <TextView
         android:id="@+id/textView23"

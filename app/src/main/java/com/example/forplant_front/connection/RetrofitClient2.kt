@@ -64,6 +64,50 @@ class RetrofitClient2 {
         val result: EmptyResult // 빈 클래스를 result로 선언
     )
 
+    data class HomeResponse(
+        val isSuccess: Boolean,
+        val code: Int,
+        val message: String,
+        val result: HomeResult?
+    )
+
+    data class HomeResult(
+        val plant_nickname: String,
+        val plant_img: String,
+        val plant_id: Int,
+        val date: Int,
+        val soulmate_plant: String
+    )
+
+    data class findtestchoiceResponse(
+        val isSuccess: Boolean,
+        val code: Int,
+        val message: String,
+        val result: List<findtestchoiceResult>
+    )
+
+    data class findtestchoiceResult(
+        val question: String,
+        val answer_a: String,
+        val answer_b: String
+    )
+
+    data class findtestresultResponse(
+        val isSuccess: Boolean,
+        val code: Int,
+        val message: String,
+        val result: List<findtestresultResult>
+    )
+
+    data class findtestresultResult(
+        val plantname: String,
+        val plant_feature: String,
+        val plant_environment: String,
+        val how_to_grow: String,
+        val plant_tmi: String,
+        val plant_img: String
+    )
+
     data class EmptyResult(val dummy: String = "")
 
     // 반려식물 목록
