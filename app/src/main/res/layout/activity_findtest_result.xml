@@ -11,7 +11,7 @@
         android:layout_height="44dp"
         android:orientation="horizontal">
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/imageButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -199,7 +199,8 @@
         android:textColor="@color/test_txt"
         android:background="@drawable/test_btn"
         android:layout_marginTop="43dp"
-        android:text="다시 찾아보기" />
+        android:text="다시 찾아보기"
+        android:layout_marginBottom="12dp"/>
 
         </LinearLayout>
     </ScrollView>
