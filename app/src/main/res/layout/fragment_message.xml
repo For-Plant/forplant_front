@@ -39,6 +39,7 @@
         app:layout_constraintTop_toBottomOf="@id/message_plant_iv" />
 
     <TextView
+        android:id="@+id/message_quest_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AI와 채팅해서 식물에 대해 알아보자"
@@ -50,6 +51,7 @@
         app:layout_constraintTop_toBottomOf="@id/message_curi_tv" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/message_gochat_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="채팅하기"
@@ -57,9 +59,9 @@
         android:textColor="@color/black"
         android:background="@drawable/background_highlight"
         android:layout_marginHorizontal="18dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="47dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/message_quest_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

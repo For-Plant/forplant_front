@@ -43,4 +43,28 @@ interface RetrofitAPI {
                       @Part("nickname") nickname: RequestBody?,
                       @Part image: MultipartBody.Part?,
                       @Part("password") password: RequestBody): Call<RetrofitClient2.Responsemodifyprofile>
+
+    @GET("/record/plant-list")
+    fun plantlist(): Call<RetrofitClient2.ResponsePlantlist>
+
+    @GET("/record/record-list?plant_nickname={식물별명}")
+    fun writeplantrecord(): Call<RetrofitClient2.ResponseWriteplant>
+  
+    @GET("/home/homescreen")
+    fun getHomeScreen(
+        @Header("x-access-token") token: String
+    ): Call<RetrofitClient2.HomeResponse>
+
+    @GET("/home/question")
+    fun getQuestion(
+        @Header("x-access-token") token: String,
+        @Query("num") num: Int
+    ): Call<RetrofitClient2.findtestchoiceResponse>
+
+    @POST("/home/soulmate-result")
+    fun getSoulmateResult(
+        @Header("x-access-token") token: String,
+        @Body answers: Map<String, Int>
+    ): Call<RetrofitClient2.findtestresultResponse>
+
 }

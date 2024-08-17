@@ -11,7 +11,7 @@
         android:layout_height="44dp"
         android:orientation="horizontal">
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/imageButton"
             android:layout_width="24dp"
             android:layout_height="24dp"

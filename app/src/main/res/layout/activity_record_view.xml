@@ -10,18 +10,18 @@
         xmlns:tools="http://schemas.android.com/tools">
 
         <ImageButton
-            android:id="@+id/detail_back_btn"
+            android:id="@+id/view_back_btn"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_back"
             android:background="@android:color/transparent"
             android:layout_marginStart="17dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/detail_record_tv"
-            app:layout_constraintBottom_toBottomOf="@id/detail_record_tv" />
+            app:layout_constraintTop_toTopOf="@id/view_record_tv"
+            app:layout_constraintBottom_toBottomOf="@id/view_record_tv" />
 
         <TextView
-            android:id="@+id/detail_record_tv"
+            android:id="@+id/view_record_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="나의 식물 일지"
@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/detail_plantname_tv"
+            android:id="@+id/view_plantname_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="식물 이름"
@@ -42,7 +42,7 @@
             android:layout_marginTop="27dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detail_record_tv" />
+            app:layout_constraintTop_toBottomOf="@id/view_record_tv" />
 
         <ImageButton
             android:id="@+id/view_trash_iv"
@@ -51,34 +51,34 @@
             android:src="@drawable/ic_trash"
             android:background="@android:color/transparent"
             android:layout_marginStart="106dp"
-            app:layout_constraintStart_toEndOf="@id/detail_plantname_tv"
-            app:layout_constraintTop_toTopOf="@id/detail_plantname_tv"
-            app:layout_constraintBottom_toBottomOf="@id/detail_plantname_tv" />
+            app:layout_constraintStart_toEndOf="@id/view_plantname_tv"
+            app:layout_constraintTop_toTopOf="@id/view_plantname_tv"
+            app:layout_constraintBottom_toBottomOf="@id/view_plantname_tv" />
 
         <ImageView
-            android:id="@+id/detail_plant_iv"
+            android:id="@+id/view_plant_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_plant"
             android:layout_marginStart="24dp"
             android:layout_marginTop="23dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detail_plantname_tv" />
+            app:layout_constraintTop_toBottomOf="@id/view_plantname_tv" />
 
         <TextView
-            android:id="@+id/detail_date_tv"
+            android:id="@+id/view_date_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2024.00.00"
             android:textSize="16dp"
             android:textColor="@color/black"
             android:layout_marginStart="25dp"
-            app:layout_constraintStart_toEndOf="@id/detail_plant_iv"
-            app:layout_constraintTop_toTopOf="@id/detail_plant_iv"
-            app:layout_constraintBottom_toBottomOf="@id/detail_plant_iv" />
+            app:layout_constraintStart_toEndOf="@id/view_plant_iv"
+            app:layout_constraintTop_toTopOf="@id/view_plant_iv"
+            app:layout_constraintBottom_toBottomOf="@id/view_plant_iv" />
 
         <TextView
-            android:id="@+id/detail_write_et"
+            android:id="@+id/view_write_et"
             android:layout_width="match_parent"
             android:layout_height="424dp"
             android:background="@drawable/border_maincolor"
@@ -92,7 +92,7 @@
             android:gravity="start"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detail_plant_iv" />
+            app:layout_constraintTop_toBottomOf="@id/view_plant_iv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
