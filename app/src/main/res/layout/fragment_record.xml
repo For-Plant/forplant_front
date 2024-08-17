@@ -46,6 +46,7 @@
             app:layout_constraintTop_toBottomOf="@id/record_record_tv" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/record_plantlist_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_plant"

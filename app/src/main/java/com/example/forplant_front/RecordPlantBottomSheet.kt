@@ -1,19 +1,53 @@
 package com.example.forplant_front
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
+import com.example.forplant_front.databinding.RecordPlantBottomsheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class RecordPlantBottomSheet : BottomSheetDialogFragment()  {
+    private var _binding: RecordPlantBottomsheetBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        return inflater.inflate(R.layout.record_plant_bottomsheet, container, false)
+        _binding = RecordPlantBottomsheetBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btmstEditplantBtn.setOnClickListener {
+            dismiss()  // 바텀시트 닫기
+            // RecordAddPlantActivity로 전환
+            val intent = Intent(requireContext(), RecordEditplantActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btmstAddrecordBtn.setOnClickListener {
+            dismiss()  // 바텀시트 닫기
+
+            // RecordDetailFragment로 전환
+            val fragment = RecordDetailFragment()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, fragment)  // 기존 프래그먼트를 새로운 프래그먼트로 교체
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null  // 메모리 누수 방지
     }
 
     companion object {
