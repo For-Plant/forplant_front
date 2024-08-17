@@ -73,6 +73,14 @@
         <activity
             android:name=".RipLIstOnedayActivity"
             android:exported="false" />
+        <activity android:name=".RecordAddPlantActivity"
+            android:exported="false" />
+        <activity android:name=".RecordPlantActivity"
+            android:exported="false" />
+        <activity android:name=".RecordViewActivity"
+            android:exported="false" />
+        <activity android:name=".RecordEditplantActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">

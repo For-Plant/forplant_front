@@ -4,9 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btmst_addplant_btn"
+        android:id="@+id/btmst_editplant_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="식물 수정하기"
         android:textSize="16dp"
         android:textColor="@color/black"
@@ -19,9 +19,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btmst_setrep_btn"
+        android:id="@+id/btmst_addrecord_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="일지 추가하기"
         android:textSize="16dp"
         android:textColor="@color/black"
@@ -32,7 +32,7 @@
         android:background="@drawable/border_highlight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btmst_addplant_btn"
+        app:layout_constraintTop_toBottomOf="@id/btmst_editplant_btn"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

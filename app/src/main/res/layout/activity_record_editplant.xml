@@ -5,21 +5,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageButton
-        android:id="@+id/addplant_back_btn"
+        android:id="@+id/editplant_back_btn"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_back"
         android:background="@android:color/transparent"
         android:layout_marginStart="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/addplant_record_tv"
-        app:layout_constraintBottom_toBottomOf="@id/addplant_record_tv" />
+        app:layout_constraintTop_toTopOf="@id/editplant_record_tv"
+        app:layout_constraintBottom_toBottomOf="@id/editplant_record_tv" />
 
     <TextView
-        android:id="@+id/addplant_record_tv"
+        android:id="@+id/editplant_record_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="식물 추가"
+        android:text="식물 수정"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:layout_marginTop="32dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/addplant_name_tv"
+        android:id="@+id/editplant_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="식물의 이름을 입력해주세요."
@@ -37,10 +37,10 @@
         android:layout_marginTop="29dp"
         android:layout_marginStart="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_record_tv" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_record_tv" />
 
     <EditText
-        android:id="@+id/addplant_name_et"
+        android:id="@+id/editplant_name_et"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/border_maincolor_10dp"
@@ -52,10 +52,10 @@
         android:layout_marginTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_name_tv" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_name_tv" />
 
     <TextView
-        android:id="@+id/addplant_namedetail_tv"
+        android:id="@+id/editplant_namedetail_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10글자 이내로 입력해주세요."
@@ -64,10 +64,10 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_name_et" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_name_et" />
 
     <TextView
-        android:id="@+id/addplant_nickname_tv"
+        android:id="@+id/editplant_nickname_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="식물을 부를 별명을 입력해주세요."
@@ -76,10 +76,10 @@
         android:layout_marginTop="14dp"
         android:layout_marginStart="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_namedetail_tv" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_namedetail_tv" />
 
     <EditText
-        android:id="@+id/addplant_nickname_et"
+        android:id="@+id/editplant_nickname_et"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/border_maincolor_10dp"
@@ -91,10 +91,10 @@
         android:layout_marginTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_nickname_tv" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_nickname_tv" />
 
     <TextView
-        android:id="@+id/addplant_nicknamedetail_tv"
+        android:id="@+id/editplant_nicknamedetail_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10글자 이내로 입력해주세요."
@@ -103,10 +103,10 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_nickname_et" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_nickname_et" />
 
     <TextView
-        android:id="@+id/addplant_date_tv"
+        android:id="@+id/editplant_date_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="식물과 처음 만난 날을 알려주세요."
@@ -115,10 +115,10 @@
         android:layout_marginTop="14dp"
         android:layout_marginStart="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_nicknamedetail_tv" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_nicknamedetail_tv" />
 
     <EditText
-        android:id="@+id/addplant_date_et"
+        android:id="@+id/editplant_date_et"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="@drawable/border_maincolor_10dp"
@@ -130,10 +130,10 @@
         android:layout_marginTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_date_tv" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_date_tv" />
 
     <TextView
-        android:id="@+id/addplant_photo_tv"
+        android:id="@+id/editplant_photo_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="식물 사진 올리기"
@@ -142,23 +142,23 @@
         android:layout_marginTop="39dp"
         android:layout_marginStart="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_date_et" />
+        app:layout_constraintTop_toBottomOf="@id/editplant_date_et" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/addplant_upload_cl"
+        android:id="@+id/editplant_upload_cl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_lightgraybox"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="7dp"
         android:paddingVertical="16dp"
-        android:paddingHorizontal="142dp"
+        android:paddingHorizontal="132dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_photo_tv">
+        app:layout_constraintTop_toBottomOf="@id/editplant_photo_tv">
 
         <TextView
-            android:id="@+id/addplant_upload_tv"
+            android:id="@+id/editplant_upload_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="파일 업로드"
@@ -169,9 +169,9 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <ImageButton
-            android:id="@+id/addplant_upload_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/editplant_upload_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/ic_upload"
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -181,18 +181,18 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/addplant_photo_iv"
+        android:id="@+id/editplant_photo_iv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addplant_photo_tv"
+        app:layout_constraintTop_toBottomOf="@id/editplant_photo_tv"
         android:visibility="gone" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/addplant_add_btn"
+        android:id="@+id/editplant_add_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="등록하기"
