@@ -10,5 +10,8 @@ class camera_result : AppCompatActivity() {
         binding = ActivityCameraResultBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        binding.back.setOnClickListener{
+            finish()
+        }
     }
 }

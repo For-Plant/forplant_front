@@ -26,5 +26,11 @@ class findtest_home : AppCompatActivity() {
             intent.putExtra("answersMap", HashMap(answersMap))
             startActivity(intent)
         }
+        binding.back.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            startActivity(intent)
+        }
     }
 }
