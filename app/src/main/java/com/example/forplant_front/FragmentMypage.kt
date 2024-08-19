@@ -95,7 +95,7 @@ class FragmentMypage: Fragment() {
                         }
 
                         // 닉네임을 가져와서 SharedPreferences에 저장
-                        val userName = it.user.username
+                        val userName = it.user.nickname
                         if (userName != null) {
                             binding.textView51.text = userName
                         }

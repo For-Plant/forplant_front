@@ -250,6 +250,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:gravity="center|start"
+            android:inputType="textPassword"
             android:paddingLeft="12dp"
             android:hint="비밀번호 입력"
             android:textSize="14dp"
@@ -270,19 +271,33 @@
             app:layout_constraintStart_toStartOf="@+id/Idedittext3"
             app:layout_constraintTop_toBottomOf="@+id/Idedittext3" />
 
+        <TextView
+            android:id="@+id/textView404"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="7dp"
+            android:text="비밀번호 조건이 일치하지 않아요"
+            android:textSize="12dp"
+            android:textColor="@color/error"
+            app:layout_constraintStart_toStartOf="@+id/Idedittext3"
+            app:layout_constraintTop_toBottomOf="@+id/Idedittext3" />
+
         <EditText
             android:id="@+id/Idedittext4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="26dp"
             android:background="@drawable/green_rectangle2"
             android:gravity="center|start"
             android:hint="비밀번호 확인"
+            android:inputType="textPassword"
             android:paddingLeft="12dp"
             android:textColor="@color/black"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="@+id/Idedittext3"
-            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+            app:layout_constraintTop_toBottomOf="@+id/Idedittext3" />
 
         <TextView
             android:id="@+id/passwordright"

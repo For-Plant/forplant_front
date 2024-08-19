@@ -133,8 +133,8 @@ class RetrofitClient2 {
     data class User(
         @SerializedName("member_id")
         val memberId: String,
-        @SerializedName("username")
-        val username: String,
+        @SerializedName("nickname")
+        val nickname: String,
         @SerializedName("profile_img")
         val profileImg: String
     )
@@ -177,12 +177,10 @@ class RetrofitClient2 {
     data class GetprofileResult(
         @SerializedName("member_id")
         val member_id: String,
-        @SerializedName("nickname")
-        val nickname: String,
+        @SerializedName("username")
+        val username: String,
         @SerializedName("profile_img")
-        val profile_img: String,
-        @SerializedName("password")
-        val password: String
+        val profile_img: String
     )
 
     data class Responsemodifyprofile(
