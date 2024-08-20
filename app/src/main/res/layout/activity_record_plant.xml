@@ -51,24 +51,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/record_record_tv" />
-    
-    <androidx.cardview.widget.CardView
-        android:id="@+id/record_plant_cv"
+
+    <ImageView
+        android:id="@+id/record_plant_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/iv_defplant"
         android:layout_marginTop="19dp"
-        app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/record_plantname_tv">
-
-        <ImageView
-            android:id="@+id/record_plant_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/iv_defplant" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@id/record_plantname_tv" />
 
     <TextView
         android:id="@+id/record_plant_tv"
@@ -80,7 +72,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginStart="29dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/record_plant_cv" />
+        app:layout_constraintTop_toBottomOf="@id/record_plant_iv" />
 
     <TextView
         android:id="@+id/record_nolist_tv"

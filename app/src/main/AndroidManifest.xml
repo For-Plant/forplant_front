@@ -95,6 +95,10 @@
             android:exported="false" />
         <activity android:name=".RecordEditplantActivity"
             android:exported="false" />
+        <activity android:name=".ChatActivity"
+            android:exported="false" />
+        <activity android:name=".ChatlistActivity"
+            android:exported="false" />
         <activity
             android:name=".RipBottomSheet"
             android:exported="false" />

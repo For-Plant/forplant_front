@@ -209,10 +209,6 @@ class RetrofitClient2 {
     
     // 반려식물 목록
 
-//    data class RequestPlantlist(
-//        @SerializedName("")
-//    )
-
     data class ResponsePlantlist(
         @SerializedName("isSuccess")
         val isSuccess: Boolean,
@@ -221,7 +217,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: Plantinfo
+        val result: List<Plantinfo>
     )
 
     data class Plantinfo(
@@ -249,13 +245,11 @@ class RetrofitClient2 {
         @SerializedName("plantImage")
         val plantImage: String,
         @SerializedName("recordDates")
-        val recordDates: ArrayList<String>
+        val recordDates: List<String>
     )
 
     // 식물 일지 작성
     data class RequestWriteRecord(
-//        @SerializedName("content-type")
-//        val content-type: ,
         @SerializedName("content")
         val content: String
     )
@@ -273,7 +267,7 @@ class RetrofitClient2 {
 
     data class WritePlantResult(
         @SerializedName("record_id")
-        val record_id: String
+        val record_id: Int
     )
 
     // 식물 일지 확인
@@ -382,11 +376,11 @@ class RetrofitClient2 {
     // 식물 부고 처리
     data class RequestRipplant(
         @SerializedName("dead_date")
-        val dead_date: String,
+        val deadDate: String,
         @SerializedName("reason")
         val reason: String,
         @SerializedName("memorial_letter")
-        val memorial_letter: String
+        val memorialLetter: String
     )
 
     data class ResponseRipplant(
@@ -397,7 +391,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: String
+        val result: Int
     )
 
     // 식물 수정 : 기존 사용자 정보 자동 입력을 위함

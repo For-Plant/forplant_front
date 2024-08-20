@@ -1,5 +1,6 @@
 package com.example.forplant_front
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,6 +19,11 @@ class FragmentMessage: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMessageBinding.inflate(inflater, container, false)
+
+        binding.messageGochatBtn.setOnClickListener {
+            val intent = Intent(activity, ChatActivity::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
     }

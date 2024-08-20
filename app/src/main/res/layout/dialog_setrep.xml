@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="296dp"
+    android:layout_height="149dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_background">
+
+
+    <TextView
+        android:id="@+id/setrep_setrep_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이 식물을 대표 식물로 설정할까요?"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="109dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/setrep_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나중에 원하는 다른 식물로 변경할 수 있어요."
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/setrep_setrep_tv"
+        app:layout_constraintEnd_toEndOf="@+id/setrep_setrep_tv"
+        app:layout_constraintTop_toBottomOf="@+id/setrep_setrep_tv" />
+
+    <android.widget.Button
+        android:id="@+id/setrep_cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:text="취소"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_small_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setrep_desc_tv"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <android.widget.Button
+        android:id="@+id/setrep_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_small_green"
+        app:layout_constraintStart_toEndOf="@+id/setrep_cancel_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setrep_desc_tv"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

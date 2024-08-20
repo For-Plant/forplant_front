@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="296dp"
+    android:layout_height="149dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_background">
+
+
+    <TextView
+        android:id="@+id/realdeath_realdeath_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정말로 부고 처리 하시겠어요?"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="109dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/realdeath_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="무지개더미에 들어가면 다시는 꺼낼 수 없어요."
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/realdeath_realdeath_tv"
+        app:layout_constraintEnd_toEndOf="@+id/realdeath_realdeath_tv"
+        app:layout_constraintTop_toBottomOf="@+id/realdeath_realdeath_tv" />
+
+    <android.widget.Button
+        android:id="@+id/realdeath_cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:text="취소"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_small_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/realdeath_desc_tv"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <android.widget.Button
+        android:id="@+id/realdeath_death_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="부고처리 하기"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_small_red"
+        app:layout_constraintStart_toEndOf="@+id/realdeath_cancel_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/realdeath_desc_tv"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
