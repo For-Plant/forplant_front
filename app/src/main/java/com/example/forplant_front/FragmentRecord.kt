@@ -65,7 +65,7 @@ class FragmentRecord: Fragment() {
         // RecyclerView 초기화
         adapter = RecordRVAdapter(plantList)
         binding.recordPlantlistRv.adapter = adapter
-        adapter.enableSelectionMode()
+        //adapter.enableSelectionMode()
     }
 
     private fun fetchPlantList(token: String) {

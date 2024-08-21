@@ -483,6 +483,87 @@ class RetrofitClient2 {
         @SerializedName("deletedRecords")
         val deletedRecords: String
     )
+
+    // 채팅방 생성
+    data class ResponseStartChat(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: ChatRoomResult
+    )
+
+    data class ChatRoomResult(
+        @SerializedName("room_id")
+        val roomId: Int
+    )
+
+    // gpt에게 채팅 전송 -> 답 받기
+    data class RequestMessage(
+        @SerializedName("message")
+        val message: String
+    )
+
+    data class ResponseMessage(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: MessageResult
+    )
+
+    data class MessageResult(
+        @SerializedName("message")
+        val message: String
+    )
+
+    // 내 채팅 기록 리스트 불러오기
+    data class ResponseChatList(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: List<ChatRoom>
+    )
+
+    data class ChatRoom(
+        @SerializedName("room_id")
+        val roomId: Int,
+        @SerializedName("room_title")
+        val roomTitle: String,
+        @SerializedName("last_message_time")
+        val lastMessageTime: String
+    )
+
+    // 채팅방 기록
+    data class ResponseChatMessages(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: List<Message>
+    )
+
+    data class Message(
+        @SerializedName("created_at")
+        val createdAt: String,
+        @SerializedName("role")
+        val role: String,
+        @SerializedName("content")
+        val content: String
+    )
     
     data class HomeResponse(
         val isSuccess: Boolean,

@@ -35,12 +35,9 @@ class RecordPlantBottomSheet : BottomSheetDialogFragment()  {
         binding.btmstAddrecordBtn.setOnClickListener {
             dismiss()  // 바텀시트 닫기
 
-            // RecordDetailFragment로 전환
-            val fragment = RecordDetailActivity()
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, fragment)  // 기존 프래그먼트를 새로운 프래그먼트로 교체
-            transaction.addToBackStack(null)
-            transaction.commit()
+            // RecordDetailActivity로 전환
+            val intent = Intent(requireContext(), RecordDetailActivity::class.java)
+            startActivity(intent)
         }
     }
 

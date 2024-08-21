@@ -118,16 +118,30 @@ interface RetrofitAPI {
     ): Call<RetrofitClient2.ResponseDeleteRecord>
 
     // Chat 1
-
+    @POST("/chat/start")
+    fun startChat(
+        @Header("x-access-token") token: String
+    ): Call<RetrofitClient2.ResponseStartChat>
 
     // Chat 2
-
+    @POST("/chat/send")
+    fun sendMessage(
+        @Header("x-access-token") token: String,
+        @Body messageRequest: RetrofitClient2.RequestMessage
+    ): Call<RetrofitClient2.ResponseMessage>
 
     // Chat 3
-
+    @GET("/chat/list")
+    fun getChatList(
+        @Header("x-access-token") token: String
+    ): Call<RetrofitClient2.ResponseChatList>
 
     // Chat 4
-
+    @GET("/chat/message")
+    fun getChatMessages(
+        @Header("x-access-token") token: String,
+        @Query("room_title") roomTitle: String
+    ): Call<RetrofitClient2.ResponseChatMessages>
   
     @GET("/home/homescreen")
     fun getHomeScreen(
