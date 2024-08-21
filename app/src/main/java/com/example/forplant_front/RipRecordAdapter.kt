@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RipRecordAdapter(private val itemList: List<String>) : RecyclerView.Adapter<RipRecordAdapter.ViewHolder>() {
+class RipRecordAdapter(private val itemList: List<String>,
+                       private val plantNickname: String) : RecyclerView.Adapter<RipRecordAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recordlists, parent, false)
@@ -34,6 +35,8 @@ class RipRecordAdapter(private val itemList: List<String>) : RecyclerView.Adapte
             itemView.setOnClickListener {
                 val context = itemView.context
                 val intent = Intent(context, RipLIstOnedayActivity::class.java)
+                intent.putExtra("plant_nickname", plantNickname)
+                intent.putExtra("plant_date", item)  // nickname을 Intent에 추가
                 context.startActivity(intent)
             }
         }

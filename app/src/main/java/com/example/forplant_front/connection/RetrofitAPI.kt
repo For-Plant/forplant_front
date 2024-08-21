@@ -34,6 +34,22 @@ interface RetrofitAPI {
     @GET("/mypage/alive-plants")
     fun getmypageplant(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetmypageplant>
 
+    @GET("/mypage/dead-plants")
+    fun getmypageripplant(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetmypageripplant>
+
+    @GET("/mypage/dead-plant-details")
+    fun getripplantrecord(@Header("x-access-token") token: String,
+                          @Query("plant_nickname") member_id: String): Call<RetrofitClient2.Responsegetripplantrecord>
+
+    @GET("/mypage/record-dates")
+    fun getripplantdate(@Header("x-access-token") token: String,
+                          @Query("plant_nickname") member_id: String): Call<RetrofitClient2.Responsegetripplantdate>
+
+    @GET("/mypage/record-content")
+    fun getripplantdaterecord(@Header("x-access-token") token: String,
+                          @Query("plant_nickname") plantNickname: String,
+                          @Query("date") date: String): Call<RetrofitClient2.Responsegetripplantdaterecord>
+
     @GET("/mypage/profile")
     fun getprofile(@Header("x-access-token") token: String): Call<RetrofitClient2.Responsegetprofile>
 
