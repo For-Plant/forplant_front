@@ -77,15 +77,6 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/findtest_ex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="~~~~~한 당신에게 딱 맞을 것 같아요!"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16sp"/>
-
-    <TextView
         android:id="@+id/findtest_name_more"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -93,7 +84,6 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="15dp"
         android:textSize="16sp"/>
 
     <ImageView

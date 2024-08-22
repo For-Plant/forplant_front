@@ -23,7 +23,9 @@ class camera_preview : AppCompatActivity() {
         }
 
         binding.cameraNextChoice.setOnClickListener {
-            val intent = Intent(this,camera_result::class.java)
+            val intent = Intent(this, camera_result::class.java).apply {
+                putExtra("image_uri", imageUri)
+            }
             startActivity(intent)
         }
         binding.back.setOnClickListener{

@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="20dp"
-                android:text="'식물이름'으로 보여요!"
+                android:text="'로즈마리'으로 보여요!"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -57,7 +57,7 @@
                 android:id="@+id/camera_name_more"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="'식물이름'에 대해 아래에서 살펴봅시다."
+                android:text="'로즈마리'에 대해 아래에서 살펴봅시다."
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:text="어쩌구저쩌구"
+                android:text="상록성 허브로, 향이 강하고 바늘 모양의 잎을 가진 식물이에요. \n요리와 약초로 많이 사용되며, 관상용으로도 인기가 있어요."
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:text="어쩌구저쩌구"
+                android:text="지중해성 기후에서 잘 자라며, 햇빛을 많이 받는 장소를 좋아해요.\n비교적 건조한 환경을 선호하며, 통풍이 잘되는 곳이 좋아요."
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:text="어쩌구저쩌구"
+                android:text="배수가 잘되는 흙을 사용하고, 물은 흙이 마르면 주는 것이 좋아요.\n햇빛을 충분히 받게 하고, 겨울에는 실내에서 보호해주는 것이 좋아요."
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -151,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                android:text="어쩌구저쩌구"
+                android:text="로즈마리는 요리에 많이 사용되며, 특히 고기 요리와 잘 어울려요. \n또한 로즈마리 오일은 피부와 머리카락 건강에 좋은 효능이 있어요."
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
