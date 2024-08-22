@@ -2,6 +2,7 @@ package com.example.forplant_front
 
 import android.content.ContentResolver
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -41,6 +42,10 @@ class camera_result : AppCompatActivity() {
         }
         binding.back.setOnClickListener{
             finish()
+        }
+        binding.findtestAgainBtn.setOnClickListener {
+            val intent = Intent(this, RecordAddPlantActivity::class.java)
+            startActivity(intent)
         }
     }
     // Uri를 File로 변환하는 함수

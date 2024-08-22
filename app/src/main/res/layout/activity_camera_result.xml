@@ -65,12 +65,12 @@
             <ImageView
                 android:id="@+id/camera_plant_img"
                 android:layout_width="240dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="31dp"
                 android:layout_marginBottom="31dp"
                 android:background="@drawable/findtest_result_img_back"
-                app:srcCompat="@drawable/findtest_plant" />
+                app:srcCompat="@drawable/rosemary" />
 
             <TextView
                 android:id="@+id/textView19"
