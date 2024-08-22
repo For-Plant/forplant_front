@@ -11,6 +11,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class RecordPlantBottomSheet : BottomSheetDialogFragment()  {
     private var _binding: RecordPlantBottomsheetBinding? = null
     private val binding get() = _binding!!
+    private var plantNickname: String? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,6 +26,9 @@ class RecordPlantBottomSheet : BottomSheetDialogFragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // RecordPlantActivity에서 이미 전달된 식물 별명을 받아옵니다.
+        plantNickname = (activity as? RecordPlantActivity)?.plantNickname
+
         binding.btmstEditplantBtn.setOnClickListener {
             dismiss()  // 바텀시트 닫기
             // RecordAddPlantActivity로 전환
@@ -36,7 +40,9 @@ class RecordPlantBottomSheet : BottomSheetDialogFragment()  {
             dismiss()  // 바텀시트 닫기
 
             // RecordDetailActivity로 전환
-            val intent = Intent(requireContext(), RecordDetailActivity::class.java)
+            val intent = Intent(requireContext(), RecordDetailActivity::class.java).apply {
+                putExtra("PLANT_NICKNAME", plantNickname)
+            }
             startActivity(intent)
         }
     }

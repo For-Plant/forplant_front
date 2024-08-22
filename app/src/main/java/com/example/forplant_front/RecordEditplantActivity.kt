@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -43,13 +44,14 @@ class RecordEditplantActivity : AppCompatActivity() {
     }
 
     private fun uploadedPhoto() {
-        //업로드 된 사진이 잇다면
-//        binding.editplantUploadCl.visibility = View.GONE
-//        binding.editplantPhotoIv.visibility = View.VISIBLE
-        //업로드 된 사진이 없다면
-        binding.editplantUploadCl.setOnClickListener {
-            viewImgPicker()
-        }
+//        if(imagePart.isExist()) {  // 업로드 된 사진이 잇다면
+//            binding.editplantUploadCl.visibility = View.GONE
+//            binding.editplantPhotoIv.visibility = View.VISIBLE
+//        } else {  // 업로드 된 사진이 없다면
+            binding.editplantUploadCl.setOnClickListener {
+                viewImgPicker()
+            }
+//        }
     }
 
     private fun addPlant() {

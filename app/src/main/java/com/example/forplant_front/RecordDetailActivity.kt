@@ -17,6 +17,7 @@ import com.example.forplant_front.databinding.ActivityRecordDetailBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
 
 class RecordDetailActivity : AppCompatActivity() {
 
@@ -91,12 +92,23 @@ class RecordDetailActivity : AppCompatActivity() {
     private fun addRecord() {
         val content = binding.detailWriteEt.text.toString()
 
+        // 전달된 데이터 받기
+        val plantNickname = intent.getStringExtra("PLANT_NICKNAME") ?: ""
+        val date = LocalDate.now()
+        Log.d("nickname", "plant name: $plantNickname")
+        Log.d("date", "today date: $date")
+
+        // 받은 데이터를 UI에 반영
+        if (plantNickname != null) {
+            binding.detailPlantnameTv.text = plantNickname
+        }
+        binding.detailDateTv.text = date.toString()
+
         if (content.isNotEmpty()) {  // 등록된 내용이 있을 때
             binding.detailNoactiveBtn.visibility = View.GONE
             binding.detailActiveBtn.visibility = View.VISIBLE
 
             val token = MyApplication.getUser().getString("jwt", "") ?: ""
-            val plantNickname = intent.getStringExtra("PLANT_NICKNAME") ?: ""
 
             val request = RetrofitClient2.RequestWriteRecord(content)
             val call = RetrofitObject.getRetrofitService.writePlantRecord(token, plantNickname, request)

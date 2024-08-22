@@ -99,6 +99,10 @@
             android:exported="false" />
         <activity android:name=".ChatlistActivity"
             android:exported="false" />
+        <activity android:name=".RecordDetailActivity"
+            android:exported="false" />
+        <activity android:name=".RecordGraveActivity"
+            android:exported="false" />
         <activity
             android:name=".RipBottomSheet"
             android:exported="false" />
