@@ -33,8 +33,20 @@ class findtest_result : AppCompatActivity() {
         fetchSoulmateResult(token, answersMap)
 
         binding.findtestAgainBtn.setOnClickListener {
-            val intent = Intent(this, findtest_home::class.java)
+            val intent = Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
             startActivity(intent)
+            val newIntent = Intent(this, findtest_home::class.java)
+            startActivity(newIntent)
+        }
+        binding.back.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
+            startActivity(intent)
+            val newIntent = Intent(this, findtest_home::class.java)
+            startActivity(newIntent)
         }
     }
     private fun fetchSoulmateResult(token: String, answers: HashMap<String, Int>) {

@@ -664,4 +664,20 @@ class RetrofitClient2 {
         val plant_tmi: String,
         val plant_img: String
     )
+
+    data class AiCameraResponse(
+        val isSuccess: Boolean,
+        val code: Int,
+        val message: String,
+        val result: cameraplantInfo
+    )
+
+    data class cameraplantInfo(
+        val plantname: String,
+        val plant_feature: String,
+        val plant_environment: String,
+        val how_to_grow: String,
+        val plant_tmi: String,
+        val plant_img: String
+    )
 }

@@ -176,4 +176,11 @@ interface RetrofitAPI {
         @Body answers: Map<String, Int>
     ): Call<RetrofitClient2.findtestresultResponse>
 
+    @Multipart
+    @POST("/predict/ai-camera")
+    fun uploadImage(
+        @Header("x-access-token") token: String,
+        @Part image: MultipartBody.Part
+    ): Call<RetrofitClient2.AiCameraResponse>
+
 }

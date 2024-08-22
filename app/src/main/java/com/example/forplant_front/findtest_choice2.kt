@@ -42,6 +42,7 @@ class findtest_choice2 : AppCompatActivity() {
         binding.findtestABottom.setOnClickListener {
             saveAnswerAndProceed(1)
         }
+        binding.back.setOnClickListener { finish() }
     }
     private fun fetchQuestionData(token: String, questionNum: Int) {
         val call = RetrofitObject.getRetrofitService.getQuestion(token, questionNum)
