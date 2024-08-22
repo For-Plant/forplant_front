@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forplant_front.connection.RetrofitClient2
@@ -36,6 +37,11 @@ class MypagePlantActivity : AppCompatActivity() {
 
         binding.imageView2.setOnClickListener {
             finish()
+        }
+
+        binding.imageView29.setOnClickListener {
+            val intent = Intent(this, RecordAddPlantActivity::class.java)
+            startActivity(intent)
         }
 
         loadData()

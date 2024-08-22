@@ -1,5 +1,6 @@
 package com.example.forplant_front
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,14 @@ class PlantListsAdapter(private val itemList: List<RetrofitClient2.Plant>) : Rec
         fun bind(item: RetrofitClient2.Plant) {
             textView.text = item.nickname
             textView2.text = item.name
+
+            // 아이템 클릭 이벤트 설정
+            itemView.setOnClickListener {
+                val context = itemView.context
+                val intent = Intent(context, RecordPlantActivity::class.java)
+                intent.putExtra("plant_nickname", item.nickname)  // nickname을 Intent에 추가
+                context.startActivity(intent)
+            }
         }
     }
 }
