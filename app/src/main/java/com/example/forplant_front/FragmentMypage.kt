@@ -77,12 +77,12 @@ class FragmentMypage: Fragment() {
         // 아이템 클릭 이벤트 설정
         binding.plantrecord1.setOnClickListener {
             val intent = Intent(requireContext(), RecordPlantActivity::class.java)
-            intent.putExtra("plant_nickname", plantalive1)  // nickname을 Intent에 추가
+            intent.putExtra("PLANT_NICKNAME", plantalive1)  // nickname을 Intent에 추가
             startActivity(intent)
         }
         binding.plantrecord2.setOnClickListener {
             val intent = Intent(requireContext(), RecordPlantActivity::class.java)
-            intent.putExtra("plant_nickname", plantalive2)  // nickname을 Intent에 추가
+            intent.putExtra("PLANT_NICKNAME", plantalive2)  // nickname을 Intent에 추가
             startActivity(intent)
         }
 

@@ -20,6 +20,7 @@ class RecordPlantActivity : AppCompatActivity() {
     lateinit var binding: ActivityRecordPlantBinding
     private lateinit var adapter: RecordPlantRVAdapter
     lateinit var plantNickname: String
+    private val recordList = mutableListOf<String>()  // 기존 일지 목록
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,12 +46,26 @@ class RecordPlantActivity : AppCompatActivity() {
         binding.recordRecordRv.layoutManager = LinearLayoutManager(this)
         binding.recordRecordRv.adapter = adapter
 
+
+
 //        //아이템 추가
 //        val itemList = listOf("2024.08.17", "2024.08.07")
 //        setupRecyclerView(itemList)
 
         val token = MyApplication.getUser().getString("jwt", "") ?: ""
         fetchPlantRecords(token, plantNickname)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE_ADD_RECORD) {
+            val newRecordDate = data?.getStringExtra("NEW_RECORD_DATE")
+            if (newRecordDate != null) {
+                adapter.addItem(newRecordDate)  // 새로운 일지를 어댑터에 추가
+                binding.recordRecordRv.scrollToPosition(adapter.itemCount - 1)  // 새로운 아이템으로 스크롤
+            }
+        }
     }
 
     private fun goBack() {
@@ -88,9 +103,18 @@ class RecordPlantActivity : AppCompatActivity() {
                         binding.recordNolistTv.visibility = View.GONE
                         binding.recordRecordRv.visibility = View.VISIBLE
 
+                        val resultIntent = Intent().apply {
+                            putExtra("plantNickname", plantNickname)
+                            Log.d("RecordDetailActivity", "$plantNickname")
+                        }
+                        setResult(RESULT_OK, resultIntent)
+
                         showPlantImage(plantData.plantImage)
                         setupRecyclerView(plantData.recordDates)
                         Log.d("RecordPlantActivity", "받아오기 성공")
+                    } else {
+                        binding.recordNolistTv.visibility = View.VISIBLE
+                        binding.recordRecordRv.visibility = View.GONE
                     }
                 } else {
                     Log.d("RecordPlantActivity", "Response not successful: ${response.message()}")
@@ -101,5 +125,9 @@ class RecordPlantActivity : AppCompatActivity() {
                 Log.d("RecordPlantActivity", "API Call failed: ${t.message}")
             }
         })
+    }
+
+    companion object {
+        private const val REQUEST_CODE_ADD_RECORD = 1001
     }
 }

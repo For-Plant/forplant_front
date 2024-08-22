@@ -31,9 +31,12 @@ class RecordViewActivity : AppCompatActivity() {
 //        binding.viewWriteEt.text = "오늘은 식목일을 맞이하여 오래 키울 수 있는 식물을 하나 샀다. 선인장을 샀는데, 쪼끄만 게 너무 귀엽다. 이름은 선쪼꼬. 커다랗게 커질 때까지 열심히 키워서 자랑할거다. 꺄르륵 안녕하세요 ㅋ"
 
         // 전달받은 식물 이름과 날짜, 그리고 포지션을 받아오기
-        val plantNickname = intent.getStringExtra("PLANT_NICKNAME") ?: ""
+        val plantNickname = intent.getStringExtra("plantNickname") ?: ""
         val date = intent.getStringExtra("DATE") ?: ""
         position = intent.getIntExtra("POSITION", -1)  // 아이템의 위치 받아오기
+        val content = intent.getStringExtra("NEW_RECORD_CONTENT") ?: ""
+
+        Log.d("RecordViewActivity", "$plantNickname, $date, $content")
 
         // 토큰 가져오기
         val token = MyApplication.getUser().getString("jwt", "") ?: ""

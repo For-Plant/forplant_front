@@ -36,7 +36,7 @@ class PlantListsAdapter(private val itemList: List<RetrofitClient2.Plant>) : Rec
             itemView.setOnClickListener {
                 val context = itemView.context
                 val intent = Intent(context, RecordPlantActivity::class.java)
-                intent.putExtra("plant_nickname", item.nickname)  // nickname을 Intent에 추가
+                intent.putExtra("PLANT_NICKNAME", item.nickname)  // nickname을 Intent에 추가
                 context.startActivity(intent)
             }
         }

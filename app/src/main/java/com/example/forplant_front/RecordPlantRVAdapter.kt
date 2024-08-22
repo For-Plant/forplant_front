@@ -35,6 +35,11 @@ class RecordPlantRVAdapter(private var recordlist: MutableList<String>) : Recycl
         notifyItemRangeChanged(position, recordlist.size)
     }
 
+    fun addItem(newItem: String) {
+        recordlist.add(newItem)
+        notifyItemInserted(recordlist.size - 1) // 새 항목이 추가된 위치에 대해 어댑터에 알림
+    }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val date: TextView = itemView.findViewById(R.id.item_plantname_tv)
 

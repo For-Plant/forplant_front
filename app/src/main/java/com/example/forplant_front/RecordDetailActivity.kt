@@ -1,9 +1,12 @@
 package com.example.forplant_front
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -29,7 +32,11 @@ class RecordDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         goBack()
-        addRecord()
+        setupTextWatcher()  // TextWatcher 설정
+        // 클릭 리스너 초기화
+        binding.detailActiveBtn.setOnClickListener {
+            addRecord()
+        }
     }
 
     private fun goBack() {
@@ -41,6 +48,25 @@ class RecordDetailActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
+    private fun setupTextWatcher() {
+        binding.detailWriteEt.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val content = s.toString()
+                if (content.isNotEmpty()) {
+                    binding.detailNoactiveBtn.visibility = View.GONE
+                    binding.detailActiveBtn.visibility = View.VISIBLE
+                } else {
+                    binding.detailNoactiveBtn.visibility = View.VISIBLE
+                    binding.detailActiveBtn.visibility = View.GONE
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
     }
 
     private fun showCustomDialog() {
@@ -105,9 +131,6 @@ class RecordDetailActivity : AppCompatActivity() {
         binding.detailDateTv.text = date.toString()
 
         if (content.isNotEmpty()) {  // 등록된 내용이 있을 때
-            binding.detailNoactiveBtn.visibility = View.GONE
-            binding.detailActiveBtn.visibility = View.VISIBLE
-
             val token = MyApplication.getUser().getString("jwt", "") ?: ""
 
             val request = RetrofitClient2.RequestWriteRecord(content)
@@ -119,8 +142,18 @@ class RecordDetailActivity : AppCompatActivity() {
                         val responseBody = response.body()
                         Log.d("RecordDetailActivity", "responseBody: $responseBody")
                         if (responseBody != null && responseBody.isSuccess) {
-                            Log.d("RecordDetailActivity", "일지가 등록되었습니다. Record ID: ${responseBody.result.record_id}")
-                            finish()
+                            Toast.makeText(this@RecordDetailActivity, "일지가 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                            Log.d("RecordDetailActivity", "일지 등록 Record ID: ${responseBody.result.record_id}, content: $content")
+                            // 추가된 일지 데이터를 Intent로 전달
+                            val resultIntent = Intent().apply {
+                                putExtra("NEW_RECORD_DATE", date)
+                                putExtra("NEW_RECORD_CONTENT", content)
+                                putExtra("PLANT_NICKNAME", plantNickname)
+                                Log.d("RecordDetailActivity", "$date, $plantNickname, $content")
+                            }
+                            setResult(RESULT_OK, resultIntent)
+
+                            finish()  // 작업 완료 후 액티비티 종료
                         } else {
                             Log.d("RecordDetailActivity", "등록에 실패했습니다: ${responseBody?.message}")
                         }
