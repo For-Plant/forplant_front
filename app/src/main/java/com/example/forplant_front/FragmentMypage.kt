@@ -24,6 +24,10 @@ class FragmentMypage: Fragment() {
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var token: String
     private lateinit var memberId: String
+    private lateinit var plantalive1: String
+    private lateinit var plantalive2: String
+    private lateinit var plantdead1: String
+    private lateinit var plantdead2: String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,6 +69,36 @@ class FragmentMypage: Fragment() {
             startActivity(intent)
         }
 
+        binding.imageView28.setOnClickListener {
+            val intent = Intent(requireContext(), RecordAddPlantActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 아이템 클릭 이벤트 설정
+        binding.plantrecord1.setOnClickListener {
+            val intent = Intent(requireContext(), RecordPlantActivity::class.java)
+            intent.putExtra("plant_nickname", plantalive1)  // nickname을 Intent에 추가
+            startActivity(intent)
+        }
+        binding.plantrecord2.setOnClickListener {
+            val intent = Intent(requireContext(), RecordPlantActivity::class.java)
+            intent.putExtra("plant_nickname", plantalive2)  // nickname을 Intent에 추가
+            startActivity(intent)
+        }
+
+        // 아이템 클릭 이벤트 설정
+        binding.plantrecord3.setOnClickListener {
+            val intent = Intent(requireContext(), PlantRecordLIstRipActivity::class.java)
+            intent.putExtra("plant_nickname", plantdead1)  // nickname을 Intent에 추가
+            startActivity(intent)
+        }
+        binding.plantrecord4.setOnClickListener {
+            val intent = Intent(requireContext(), PlantRecordLIstRipActivity::class.java)
+            intent.putExtra("plant_nickname", plantdead2)  // nickname을 Intent에 추가
+            startActivity(intent)
+        }
+
+
         loadProfileImage()
         return binding.root
     }
@@ -95,7 +129,7 @@ class FragmentMypage: Fragment() {
                         }
 
                         // 닉네임을 가져와서 SharedPreferences에 저장
-                        val userName = it.user.username
+                        val userName = it.user.nickname
                         if (userName != null) {
                             binding.textView51.text = userName
                         }
@@ -121,6 +155,7 @@ class FragmentMypage: Fragment() {
                             binding.plantrecord2.visibility= View.GONE
                             binding.textView55.text = alivePlant[0].nickname
                             binding.textView56.text = alivePlant[0].name
+                            plantalive1=alivePlant[0].nickname
                         }
                         else if(alivePlantcount>=2){
                             binding.recordPlant.visibility= View.GONE
@@ -130,6 +165,8 @@ class FragmentMypage: Fragment() {
                             binding.textView56.text = alivePlant[0].name
                             binding.textView57.text = alivePlant[1].nickname
                             binding.textView58.text = alivePlant[1].name
+                            plantalive1=alivePlant[0].nickname
+                            plantalive2=alivePlant[1].nickname
                         }
                         else{
                             binding.recordPlant.visibility= View.VISIBLE
@@ -145,6 +182,7 @@ class FragmentMypage: Fragment() {
                             binding.textView59.text = deadPlant[0].nickname
                             binding.textView60.text = deadPlant[0].plantCreatedAt
                             binding.textView77.text = deadPlant[0].deadCreatedAt
+                            plantdead1=deadPlant[0].nickname
                         }
                         else if(deadPlantCount>=2){
                             binding.textView67.visibility= View.GONE
@@ -155,7 +193,9 @@ class FragmentMypage: Fragment() {
                             binding.textView77.text = deadPlant[0].deadCreatedAt
                             binding.textView61.text = deadPlant[1].nickname
                             binding.textView62.text = deadPlant[1].plantCreatedAt
-                            binding.textView62.text = deadPlant[1].deadCreatedAt
+                            binding.textRecord2.text = deadPlant[1].deadCreatedAt
+                            plantdead1=deadPlant[0].nickname
+                            plantdead2=deadPlant[1].nickname
                         }
                         else{
                             binding.textView67.visibility= View.VISIBLE

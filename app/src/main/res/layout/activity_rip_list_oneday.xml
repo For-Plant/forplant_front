@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
-        android:text="2023.09 ~ 2023.10"
+        android:text="2023.09"
         android:textColor="@color/black"
         android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView25"

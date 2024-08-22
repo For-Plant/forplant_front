@@ -3,14 +3,24 @@ package com.example.forplant_front
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.Matrix
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.text.Editable
+import android.text.TextWatcher
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -19,9 +29,17 @@ import com.example.forplant_front.connection.RetrofitClient2
 import com.example.forplant_front.databinding.ActivityAgree2Binding
 import com.example.forplant_front.databinding.ActivityAgree3Binding
 import com.example.forplant_front.databinding.ActivityProfilemodifyBinding
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
+import java.util.regex.Pattern
 
 
 class ProfilemodifyActivity : AppCompatActivity() {
@@ -30,6 +48,10 @@ class ProfilemodifyActivity : AppCompatActivity() {
     private lateinit var user: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
     private lateinit var token: String
+    private var selectedImageUri: Uri? = null
+    private var isPasswordValid = false
+    private var isPasswordMatching = false
+    var isPasswordVisible = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfilemodifyBinding.inflate(layoutInflater)
@@ -39,12 +61,154 @@ class ProfilemodifyActivity : AppCompatActivity() {
         user = MyApplication.getUser()
         token = user.getString("jwt", "").toString()
 
+        val eyeImageView = binding.imageView11
+        val eyeCheckImageView = binding.imageView12
+
+        val textPassword = binding.Idedittext3
+        val textPasswordCheck = binding.Idedittext4
+
+        binding.passworwrong.visibility = View.GONE
+
+        eyeImageView.setOnClickListener {
+            togglePasswordVisibility(textPassword, eyeImageView)
+        }
+        eyeCheckImageView.setOnClickListener {
+            togglePasswordVisibility(textPasswordCheck, eyeCheckImageView)
+        }
+
+        textPassword.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                // 입력된 비밀번호가 조건을 만족하는지 확인
+                isPasswordValid = isPasswordValid(textPassword.text.toString())
+
+                // 비밀번호가 조건을 만족하지 않으면 textchecking의 visibility를 View.VISIBLE로 설정
+                if (!isPasswordValid) {
+                    binding.textView40.visibility = View.GONE
+                    binding.textView404.visibility = View.VISIBLE
+                } else {
+                    // 비밀번호가 조건을 만족하면 textchecking의 visibility를 View.GONE으로 설정
+                    binding.textView40.visibility = View.GONE
+                    binding.textView404.visibility = View.GONE
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+        // textPasswordCheck의 텍스트 변경 감지
+        textPasswordCheck.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                // textPassword와 textPasswordCheck의 값이 같을 때 배경을 업데이트
+                isPasswordMatching = textPassword.text.toString() == textPasswordCheck.text.toString()
+
+                if (isPasswordMatching) {
+                    binding.passworwrong.visibility = View.GONE
+                } else {
+                    binding.passworwrong.visibility = View.VISIBLE
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
         binding.imageView2.setOnClickListener {
             showCustomDialog()
         }
 
         binding.button.setOnClickListener {
-            finish()
+            val nickname = binding.Idedittext.text.toString()
+            val password = binding.Idedittext3.text.toString()
+
+            val nickNamePart = nickname.toRequestBody("text/plain".toMediaTypeOrNull())
+            val passwordPart = password.toRequestBody("text/plain".toMediaTypeOrNull())
+
+            // selectedImageUri를 로컬 변수에 저장
+            val localSelectedImageUri = selectedImageUri
+
+            if (localSelectedImageUri == null) {
+                // 이미지 URI가 null이면 서버에는 이미지를 업로드하지 않고, 닉네임과 비밀번호만 전송
+                val call = RetrofitObject.getRetrofitService.modifyprofile("$token", nickNamePart,null,passwordPart)
+                call.enqueue(object : Callback<RetrofitClient2.Responsemodifyprofile> {
+                    override fun onResponse(call: Call<RetrofitClient2.Responsemodifyprofile>, response: Response<RetrofitClient2.Responsemodifyprofile>) {
+                        Log.d("Retrofit430", response.toString())
+                        if (response.isSuccessful) {
+                            Log.d("Retrofit410", response.toString())
+                            val responseBody = response.body()
+                            Log.d("Retrofit40", responseBody.toString())
+                            if (responseBody != null && responseBody.isSuccess) {
+                                finish()
+                            } else {
+                                Toast.makeText(
+                                    this@ProfilemodifyActivity,
+                                    responseBody?.message ?: "Unknown error",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+
+                    override fun onFailure(call: Call<RetrofitClient2.Responsemodifyprofile>, t: Throwable) {
+                        val errorMessage = "Call Failed: ${t.message}"
+                        Log.d("Retrofit0", errorMessage)
+                    }
+                })
+            } else {
+                val compressedImageData = compressAndEncodeImage(localSelectedImageUri)
+                // 이미지 URI가 null이 아니면 이미지를 서버에 업로드하고 닉네임과 비밀번호도 함께 전송
+                val file = File(cacheDir, "image.jpg")
+                file.writeBytes(Base64.decode(compressedImageData, Base64.DEFAULT))
+
+                // 이미지 파일을 서버로 전송
+                val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+
+                // MultipartBody.Part 객체를 생성
+                val body = MultipartBody.Part.createFormData("profile_img", file.name, requestFile)
+
+                Log.d("Retrofit431", body.toString())
+                val call = RetrofitObject.getRetrofitService.modifyprofile(
+                    "$token",
+                    nickNamePart,
+                    body,
+                    passwordPart
+                )
+                call.enqueue(object : Callback<RetrofitClient2.Responsemodifyprofile> {
+                    override fun onResponse(
+                        call: Call<RetrofitClient2.Responsemodifyprofile>,
+                        response: Response<RetrofitClient2.Responsemodifyprofile>
+                    ) {
+                        Log.d("Retrofit43", response.toString())
+                        if (response.isSuccessful) {
+                            Log.d("Retrofit41", response.toString())
+                            val responseBody = response.body()
+                            Log.d("Retrofit4", responseBody.toString())
+                            if (responseBody != null && responseBody.isSuccess) {
+                                finish()
+                            } else {
+                                Toast.makeText(
+                                    this@ProfilemodifyActivity,
+                                    responseBody?.message ?: "Unknown error",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+
+                    override fun onFailure(
+                        call: Call<RetrofitClient2.Responsemodifyprofile>,
+                        t: Throwable
+                    ) {
+                        val errorMessage = "Call Failed: ${t.message}"
+                        Log.d("Retrofit", errorMessage)
+                    }
+                })
+            }
         }
 
         binding.imageView18.setOnClickListener {
@@ -69,10 +233,19 @@ class ProfilemodifyActivity : AppCompatActivity() {
 //                        binding.nameIdedittext.text = it.user.memberId
 
                         // 닉네임을 가져와서 SharedPreferences에 저장
-                        val nickName = it.nickname
+                        val nickName = it.username
                         Log.d("nickName", nickName.toString())
                         if (nickName != null) {
-                            binding.Idedittext2.text = nickName
+                            binding.nameIdedittext.text = nickName
+                        }
+                        else{
+                            binding.nameIdedittext.text = " "
+                        }
+
+                        val memberid = it.member_id
+                        Log.d("nickName", memberid.toString())
+                        if (nickName != null) {
+                            binding.Idedittext2.text = memberid
                         }
                         else{
                             binding.Idedittext2.text = " "
@@ -147,7 +320,7 @@ class ProfilemodifyActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
-            val selectedImageUri: Uri = data.data!!
+            selectedImageUri = data.data!!
 
             // 이제 selectedImageUri를 사용하여 이미지를 처리하고, ImageView에 설정할 수 있습니다.
             // 예시로 Glide 사용하는 방법:
@@ -157,6 +330,50 @@ class ProfilemodifyActivity : AppCompatActivity() {
 
             binding.soldoutlayout.visibility= View.GONE
         }
+    }
+    private fun isPasswordValid(password: String): Boolean {
+        // 비밀번호가 8자리 이상이며 영문, 숫자, 특수문자를 포함하는지 확인하는 로직
+        val pattern = Pattern.compile("(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@\$!%*?&])[A-Za-z\\d@$!%*?&]{8,}")
+        val matcher = pattern.matcher(password)
+        return matcher.matches()
+    }
+    private fun togglePasswordVisibility(editText: EditText, imageView: ImageView) {
+        // 비밀번호 보이기/감추기 기능 구현
+        isPasswordVisible = !isPasswordVisible
+
+        if (isPasswordVisible) {
+            // 비밀번호를 보이도록 변경
+            editText.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            imageView.setImageResource(R.drawable.eye_on)
+        } else {
+            // 비밀번호를 감추도록 변경
+            editText.transformationMethod = PasswordTransformationMethod.getInstance()
+            imageView.setImageResource(R.drawable.eye_off)
+        }
+
+        // 커서를 마지막으로 이동하여 비밀번호 글자가 보이도록 함
+        editText.setSelection(editText.text.length)
+    }
+
+    private fun compressAndEncodeImage(imageUri: Uri): String? {
+        val inputStream = contentResolver.openInputStream(imageUri)
+        val bitmap = BitmapFactory.decodeStream(inputStream)
+        inputStream?.close()
+
+        val maxHeight = 1024.0f
+        val maxWidth = 1024.0f
+        val scale = Math.min(maxWidth / bitmap.width, maxHeight / bitmap.height)
+
+        val matrix = Matrix()
+        matrix.postScale(scale, scale)
+
+        val scaledBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream) // 조정 가능한 압축률 및 포맷 설정
+        val byteArray = byteArrayOutputStream.toByteArray()
+
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
     }
 
     override fun onResume() {

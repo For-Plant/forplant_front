@@ -19,7 +19,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: String,
+        val result: String
     )
 
     data class Requestfindid(
@@ -37,7 +37,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: LoginResult,
+        val result: LoginResult
     )
     data class LoginResult(
         @SerializedName("member_id")
@@ -74,7 +74,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: GetidResult,
+        val result: GetidResult
     )
     data class GetidResult(
         @SerializedName("user_id")
@@ -94,6 +94,64 @@ class RetrofitClient2 {
         val result: Int,
     )
 
+    data class Responsegetripplantdaterecord(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: Ripcontent
+    )
+    data class Ripcontent(
+        @SerializedName("content")
+        val content: String
+    )
+    data class Responsegetripplantdate(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: Ripplantresult
+    )
+
+    data class Ripplantresult(
+        @SerializedName("plantName")
+        val plantName: String,
+        @SerializedName("plantImage")
+        val plantImage: String,
+        @SerializedName("recordDates")
+        val recordDates: List<String>
+    )
+
+    data class Responsegetripplantrecord(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: Ripplantrecord
+    )
+
+    data class Ripplantrecord(
+        @SerializedName("nickname")
+        val nickname: String,
+        @SerializedName("plant_created_at")
+        val plantCreatedAt: String,
+        @SerializedName("dead_created_at")
+        val deadCreatedAt: String,
+        @SerializedName("img")
+        val img: String,
+        @SerializedName("letter")
+        val letter: String
+    )
+
     data class Responsegetmypageplant(
         @SerializedName("isSuccess")
         val isSuccess: Boolean,
@@ -102,7 +160,18 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: List<Plant>,
+        val result: List<Plant>
+    )
+
+    data class Responsegetmypageripplant(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: List<DeadPlant>
     )
 
     data class Responsegetmypage(
@@ -113,7 +182,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: MypageResult,
+        val result: MypageResult
     )
     data class MypageResult(
         @SerializedName("user")
@@ -133,8 +202,8 @@ class RetrofitClient2 {
     data class User(
         @SerializedName("member_id")
         val memberId: String,
-        @SerializedName("username")
-        val username: String,
+        @SerializedName("nickname")
+        val nickname: String,
         @SerializedName("profile_img")
         val profileImg: String
     )
@@ -172,17 +241,15 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: GetprofileResult,
+        val result: GetprofileResult
     )
     data class GetprofileResult(
         @SerializedName("member_id")
         val member_id: String,
-        @SerializedName("nickname")
-        val nickname: String,
+        @SerializedName("username")
+        val username: String,
         @SerializedName("profile_img")
-        val profile_img: String,
-        @SerializedName("password")
-        val password: String
+        val profile_img: String
     )
 
     data class Responsemodifyprofile(
@@ -193,7 +260,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: ModifyResult,
+        val result: ModifyResult
     )
 
     data class ModifyResult(
@@ -590,6 +657,22 @@ class RetrofitClient2 {
     )
 
     data class findtestresultResult(
+        val plantname: String,
+        val plant_feature: String,
+        val plant_environment: String,
+        val how_to_grow: String,
+        val plant_tmi: String,
+        val plant_img: String
+    )
+
+    data class AiCameraResponse(
+        val isSuccess: Boolean,
+        val code: Int,
+        val message: String,
+        val result: cameraplantInfo
+    )
+
+    data class cameraplantInfo(
         val plantname: String,
         val plant_feature: String,
         val plant_environment: String,
