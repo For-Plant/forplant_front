@@ -288,17 +288,6 @@ class RetrofitClient2 {
     )
 
     // 식물 추가
-    data class RequestAddPlant(
-        @SerializedName("name")
-        val name: String,
-        @SerializedName("nickname")
-        val nickname: String,
-        @SerializedName("created-at")
-        val created_at: String,
-        @SerializedName("plant_img")
-        val plant_img: String
-    )
-
     data class ResponseAddPlant(
         @SerializedName("isSuccess")
         val isSuccess: Boolean,
@@ -312,7 +301,7 @@ class RetrofitClient2 {
 
     data class AddPlantResult(
         @SerializedName("plant_id")
-        val plant_id: String
+        val plantId: Int
     )
 
     // 대표 식물 설정
@@ -412,7 +401,7 @@ class RetrofitClient2 {
         @SerializedName("nickname")
         val nickname: String,
         @SerializedName("created_at")
-        val created_at: String,
+        val createdAt: String,
         @SerializedName("img")
         val img: String
     )
@@ -424,9 +413,9 @@ class RetrofitClient2 {
         @SerializedName("nickname")
         val nickname: String,
         @SerializedName("created_at")
-        val created_at: String,
+        val createdAt: String,
         @SerializedName("plant_img")
-        val plant_img: String
+        val plantImg: String
     )
     data class ResponseSaveEditplant(
         @SerializedName("isSuccess")
@@ -463,9 +452,9 @@ class RetrofitClient2 {
         @SerializedName("nickname")
         val nickname: String,
         @SerializedName("created_at")
-        val created_at: String,
+        val createdAt: String,
         @SerializedName("plant_img")
-        val plant_img: String
+        val plantImg: String
     )
 
     data class ResponseDeleteRecord(

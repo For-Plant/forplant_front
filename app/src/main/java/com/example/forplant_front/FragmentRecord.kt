@@ -1,5 +1,6 @@
 package com.example.forplant_front
 
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +27,19 @@ class FragmentRecord: Fragment() {
     private lateinit var adapter: RecordRVAdapter
     private lateinit var userPreferences: SharedPreferences
     private var plantList = mutableListOf<RetrofitClient2.Plantinfo>() // Plant 리스트
+    private val addPlantLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val newPlantName = result.data?.getStringExtra("newPlantName")
+            val newPlantNickname = result.data?.getStringExtra("newPlantNickname")
+            val newPlantId = result.data?.getIntExtra("newPlantId", -1)
+
+            if (newPlantName != null && newPlantNickname != null && newPlantId != null) {
+                val newPlant = RetrofitClient2.Plantinfo(newPlantName, newPlantNickname)
+                adapter.addPlant(newPlant)
+                binding.recordPlantlistRv.scrollToPosition(adapter.itemCount - 1)
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -80,7 +95,11 @@ class FragmentRecord: Fragment() {
                     if (plantResponse != null && plantResponse.isSuccess) {
                         plantList.clear()
                         plantList.addAll(plantResponse.result)
+                        adapter.updatePlantList(plantList) // 어댑터에 새로운 데이터 반영
                         adapter.notifyDataSetChanged()
+
+                        binding.recordNoplantTv.visibility = View.GONE
+                        binding.recordPlantlistRv.visibility = View.VISIBLE
                     } else {
                         Log.d("FragmentRecord", "API 실패: ${plantResponse?.message}")
                     }

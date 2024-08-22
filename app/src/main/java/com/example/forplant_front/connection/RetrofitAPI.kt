@@ -80,7 +80,7 @@ interface RetrofitAPI {
         @Header("x-access-token") token: String,
         @Part("name") name: RequestBody,
         @Part("nickname") nickname: RequestBody,
-        @Part("created_at") createdAt: RequestBody,
+        @Part("created-at") createdAt: RequestBody,
         @Part plantImg: MultipartBody.Part? // 이미지 파트는 null 가능하도록 설정
     ): Call<RetrofitClient2.ResponseAddPlant>
 

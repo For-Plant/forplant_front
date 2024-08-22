@@ -2,6 +2,7 @@ package com.example.forplant_front
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
@@ -28,6 +29,8 @@ import java.io.FileOutputStream
 class RecordAddPlantActivity: AppCompatActivity() {
     private lateinit var binding: ActivityRecordAddplantBinding
     private var selectedImageUri: Uri? = null
+    private lateinit var adapter: RecordRVAdapter
+    private lateinit var userPreferences: SharedPreferences
 
     val pickImage = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         // Callback is invoked after the user selects a media item or closes the photo picker.
@@ -88,7 +91,8 @@ class RecordAddPlantActivity: AppCompatActivity() {
             val createdAt = binding.addplantDateEt.text.toString()
 
             if (name.isNotEmpty() && nickname.isNotEmpty() && createdAt.isNotEmpty()) {
-                val token = MyApplication.getUser().getString("jwt", "") ?: ""
+                userPreferences = MyApplication.getUser()
+                val token = userPreferences.getString("jwt", "") ?: ""
 
                 val nameRequestBody = name.toRequestBody("text/plain".toMediaTypeOrNull())
                 val nicknameRequestBody = nickname.toRequestBody("text/plain".toMediaTypeOrNull())
@@ -101,28 +105,38 @@ class RecordAddPlantActivity: AppCompatActivity() {
                 }
 
                 val call = RetrofitObject.getRetrofitService.addPlant(token, nameRequestBody, nicknameRequestBody, createdAtRequestBody, imagePart)
-
                 call.enqueue(object : Callback<RetrofitClient2.ResponseAddPlant> {
                     override fun onResponse(call: Call<RetrofitClient2.ResponseAddPlant>, response: Response<RetrofitClient2.ResponseAddPlant>) {
+                        Log.d("RecordAddPlantActivity", "Response Body: ${response.body().toString()}")
+                        Log.d("RecordAddPlantActivity", response.toString())
                         if (response.isSuccessful) {
                             val responseBody = response.body()
                             Log.d("RecordAddPlantActivity", "responseBody: $responseBody")
+                            val plantId = responseBody?.result?.plantId
                             if (responseBody != null && responseBody.isSuccess) {
-                                Log.d("RecordAddPlantActivity", "식물 추가 성공. Plant ID: ${responseBody.result.plant_id}")
+                                val resultIntent = Intent().apply {
+                                    putExtra("newPlantName", name)
+                                    putExtra("newPlantNickname", nickname)
+                                    putExtra("newPlantId", plantId)
+                                }
+                                setResult(RESULT_OK, resultIntent)
+                                Toast.makeText(this@RecordAddPlantActivity, "식물이 추가되었습니다", Toast.LENGTH_SHORT).show()
+                                Log.d("RecordAddPlantActivity", "식물 추가 성공. Plant ID: ${responseBody.result.plantId}")
                                 finish()
                             } else {
-                                Log.d("RecordAddPlantActivity", "식물 추가 실패: ${responseBody?.message}")
+                                Log.e("RecordAddPlantActivity", "식물 추가 실패: ${responseBody?.message}")
                             }
                         } else {
-                            Log.d("RecordAddPlantActivity", "응답 실패: ${response.message()}")
+                            Log.e("RecordAddPlantActivity", "응답 실패: ${response.message()}")
                         }
                     }
 
                     override fun onFailure(call: Call<RetrofitClient2.ResponseAddPlant>, t: Throwable) {
-                        Log.d("RecordAddPlantActivity", "API 호출 실패: ${t.message}")
+                        Log.e("RecordAddPlantActivity", "API 호출 실패: ${t.message}")
                     }
                 })
             } else {
+                Toast.makeText(this, "이름, 별명, 날짜를 모두 적어주세요.", Toast.LENGTH_SHORT).show()
                 Log.d("RecordAddPlantActivity", "모든 필드를 채워주세요.")
             }
         }

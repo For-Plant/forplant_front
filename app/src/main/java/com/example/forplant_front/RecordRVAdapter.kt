@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forplant_front.connection.RetrofitClient2
 
-class RecordRVAdapter(private var plantList: List<RetrofitClient2.Plantinfo>) : RecyclerView.Adapter<RecordRVAdapter.ViewHolder>() {
+class RecordRVAdapter(private var plantList: MutableList<RetrofitClient2.Plantinfo>) : RecyclerView.Adapter<RecordRVAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_plant, parent, false)
@@ -26,15 +26,23 @@ class RecordRVAdapter(private var plantList: List<RetrofitClient2.Plantinfo>) : 
 
     // 데이터 리스트를 업데이트할 수 있는 메서드 추가
     fun updatePlantList(newPlantList: List<RetrofitClient2.Plantinfo>) {
-        plantList = newPlantList
+        plantList = newPlantList.toMutableList()
         notifyDataSetChanged()
+    }
+
+    // 새로운 식물을 리스트에 추가하는 메서드
+    fun addPlant(newPlant: RetrofitClient2.Plantinfo) {
+        plantList.add(newPlant)
+        notifyItemInserted(plantList.size - 1)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val plantName: TextView = itemView.findViewById(R.id.item_plantname_tv)
+        private val plantinfo: TextView = itemView.findViewById(R.id.item_plantspecies_tv)
 
         fun bind(item: RetrofitClient2.Plantinfo) {
-            plantName.text = "${item.name} (${item.nickname})"
+            plantName.text = "${item.name}"
+            plantinfo.text = "${item.nickname}"
 
             // 아이템 클릭 이벤트 설정
             itemView.setOnClickListener {
