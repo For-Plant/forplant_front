@@ -41,8 +41,8 @@ class RecordRVAdapter(private var plantList: MutableList<RetrofitClient2.Plantin
         private val plantinfo: TextView = itemView.findViewById(R.id.item_plantspecies_tv)
 
         fun bind(item: RetrofitClient2.Plantinfo) {
-            plantName.text = "${item.name}"
-            plantinfo.text = "${item.nickname}"
+            plantName.text = "${item.nickname}"
+            plantinfo.text = "${item.name}"
 
             // 아이템 클릭 이벤트 설정
             itemView.setOnClickListener {
