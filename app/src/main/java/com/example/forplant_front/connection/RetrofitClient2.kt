@@ -209,10 +209,6 @@ class RetrofitClient2 {
     
     // 반려식물 목록
 
-//    data class RequestPlantlist(
-//        @SerializedName("")
-//    )
-
     data class ResponsePlantlist(
         @SerializedName("isSuccess")
         val isSuccess: Boolean,
@@ -221,7 +217,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: Plantinfo
+        val result: List<Plantinfo>
     )
 
     data class Plantinfo(
@@ -249,13 +245,11 @@ class RetrofitClient2 {
         @SerializedName("plantImage")
         val plantImage: String,
         @SerializedName("recordDates")
-        val recordDates: ArrayList<String>
+        val recordDates: List<String>
     )
 
     // 식물 일지 작성
     data class RequestWriteRecord(
-//        @SerializedName("content-type")
-//        val content-type: ,
         @SerializedName("content")
         val content: String
     )
@@ -273,7 +267,7 @@ class RetrofitClient2 {
 
     data class WritePlantResult(
         @SerializedName("record_id")
-        val record_id: String
+        val record_id: Int
     )
 
     // 식물 일지 확인
@@ -294,17 +288,6 @@ class RetrofitClient2 {
     )
 
     // 식물 추가
-    data class RequestAddPlant(
-        @SerializedName("name")
-        val name: String,
-        @SerializedName("nickname")
-        val nickname: String,
-        @SerializedName("created-at")
-        val created_at: String,
-        @SerializedName("plant_img")
-        val plant_img: String
-    )
-
     data class ResponseAddPlant(
         @SerializedName("isSuccess")
         val isSuccess: Boolean,
@@ -318,7 +301,7 @@ class RetrofitClient2 {
 
     data class AddPlantResult(
         @SerializedName("plant_id")
-        val plant_id: String
+        val plantId: Int
     )
 
     // 대표 식물 설정
@@ -382,11 +365,11 @@ class RetrofitClient2 {
     // 식물 부고 처리
     data class RequestRipplant(
         @SerializedName("dead_date")
-        val dead_date: String,
+        val deadDate: String,
         @SerializedName("reason")
         val reason: String,
         @SerializedName("memorial_letter")
-        val memorial_letter: String
+        val memorialLetter: String
     )
 
     data class ResponseRipplant(
@@ -397,7 +380,7 @@ class RetrofitClient2 {
         @SerializedName("message")
         val message: String,
         @SerializedName("result")
-        val result: String
+        val result: Int
     )
 
     // 식물 수정 : 기존 사용자 정보 자동 입력을 위함
@@ -418,7 +401,7 @@ class RetrofitClient2 {
         @SerializedName("nickname")
         val nickname: String,
         @SerializedName("created_at")
-        val created_at: String,
+        val createdAt: String,
         @SerializedName("img")
         val img: String
     )
@@ -430,9 +413,9 @@ class RetrofitClient2 {
         @SerializedName("nickname")
         val nickname: String,
         @SerializedName("created_at")
-        val created_at: String,
+        val createdAt: String,
         @SerializedName("plant_img")
-        val plant_img: String
+        val plantImg: String
     )
     data class ResponseSaveEditplant(
         @SerializedName("isSuccess")
@@ -469,9 +452,9 @@ class RetrofitClient2 {
         @SerializedName("nickname")
         val nickname: String,
         @SerializedName("created_at")
-        val created_at: String,
+        val createdAt: String,
         @SerializedName("plant_img")
-        val plant_img: String
+        val plantImg: String
     )
 
     data class ResponseDeleteRecord(
@@ -488,6 +471,87 @@ class RetrofitClient2 {
     data class DeleteRecordResult(
         @SerializedName("deletedRecords")
         val deletedRecords: String
+    )
+
+    // 채팅방 생성
+    data class ResponseStartChat(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: ChatRoomResult
+    )
+
+    data class ChatRoomResult(
+        @SerializedName("room_id")
+        val roomId: Int
+    )
+
+    // gpt에게 채팅 전송 -> 답 받기
+    data class RequestMessage(
+        @SerializedName("message")
+        val message: String
+    )
+
+    data class ResponseMessage(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: MessageResult
+    )
+
+    data class MessageResult(
+        @SerializedName("message")
+        val message: String
+    )
+
+    // 내 채팅 기록 리스트 불러오기
+    data class ResponseChatList(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: List<ChatRoom>
+    )
+
+    data class ChatRoom(
+        @SerializedName("room_id")
+        val roomId: Int,
+        @SerializedName("room_title")
+        val roomTitle: String,
+        @SerializedName("last_message_time")
+        val lastMessageTime: String
+    )
+
+    // 채팅방 기록
+    data class ResponseChatMessages(
+        @SerializedName("isSuccess")
+        val isSuccess: Boolean,
+        @SerializedName("code")
+        val code: String,
+        @SerializedName("message")
+        val message: String,
+        @SerializedName("result")
+        val result: List<Message>
+    )
+
+    data class Message(
+        @SerializedName("created_at")
+        val createdAt: String,
+        @SerializedName("role")
+        val role: String,
+        @SerializedName("content")
+        val content: String
     )
     
     data class HomeResponse(

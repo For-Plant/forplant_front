@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.forplant_front.connection.RetrofitClient2
 import com.example.forplant_front.databinding.RecordBottomsheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -49,6 +50,8 @@ class RecordBottomSheet : BottomSheetDialogFragment()  {
             dismiss()  // 바텀시트 닫기
 
             // 부고처리 할 식물 선택 창
+            // 부고처리 할 식물 정보 전달
+
 
         }
     }

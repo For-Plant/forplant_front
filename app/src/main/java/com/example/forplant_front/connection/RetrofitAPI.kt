@@ -44,11 +44,104 @@ interface RetrofitAPI {
                       @Part image: MultipartBody.Part?,
                       @Part("password") password: RequestBody): Call<RetrofitClient2.Responsemodifyprofile>
 
+    // Record 1
     @GET("/record/plant-list")
-    fun plantlist(): Call<RetrofitClient2.ResponsePlantlist>
+    fun getPlantList(
+        @Header("x-access-token") token: String
+    ): Call<RetrofitClient2.ResponsePlantlist>
 
-    @GET("/record/record-list?plant_nickname={식물별명}")
-    fun writeplantrecord(): Call<RetrofitClient2.ResponseWriteplant>
+    // Record 2
+    @GET("/record/record-list")
+    fun getPlantRecords(
+        @Header("x-access-token") token: String,
+        @Query("plant_nickname") plantNickname: String
+    ): Call<RetrofitClient2.ResponseWriteplant>
+
+    // Record 3
+    @POST("/record/write-record")
+    fun writePlantRecord(
+        @Header("x-access-token") token: String,
+        @Query("plant_nickname") plantNickname: String,
+        @Body content: RetrofitClient2.RequestWriteRecord
+    ): Call<RetrofitClient2.ResponseWriteRecord>
+
+    // Record 4
+    @GET("/record/get-content")
+    fun getPlantRecordContent(
+        @Header("x-access-token") token: String,
+        @Query("plant_nickname") plantNickname: String,
+        @Query("date") date: String
+    ): Call<RetrofitClient2.ResponseCheckRecord>
+
+    // Record 5
+    @Multipart
+    @POST("/record/add-plant")
+    fun addPlant(
+        @Header("x-access-token") token: String,
+        @Part("name") name: RequestBody,
+        @Part("nickname") nickname: RequestBody,
+        @Part("created-at") createdAt: RequestBody,
+        @Part plantImg: MultipartBody.Part? // 이미지 파트는 null 가능하도록 설정
+    ): Call<RetrofitClient2.ResponseAddPlant>
+
+    // Record 6
+
+
+    // Record 7
+
+
+    // Record 8
+    @POST("/record/dead-plant")
+    fun reportDeadPlant(
+        @Header("x-access-token") token: String,
+        @Query("plant_nickname") plantNickname: String,
+        @Body requestBody: RetrofitClient2.RequestRipplant
+    ): Call<RetrofitClient2.ResponseRipplant>
+
+    // Record 9
+
+
+    // Record 10
+
+
+    // Record 11
+    @Multipart
+    @DELETE("record/delete-record")
+    fun deletePlantRecord(
+        @Header("x-access-token") token: String,
+        @Part("name") name: RequestBody,
+        @Part("nickname") nickname: RequestBody,
+        @Part("created_at") createdAt: RequestBody,
+        @Part plantImg: MultipartBody.Part,
+        @Query("plant_nickname") plantNickname: String,
+        @Query("date") date: String
+    ): Call<RetrofitClient2.ResponseDeleteRecord>
+
+    // Chat 1
+    @POST("/chat/start")
+    fun startChat(
+        @Header("x-access-token") token: String
+    ): Call<RetrofitClient2.ResponseStartChat>
+
+    // Chat 2
+    @POST("/chat/send")
+    fun sendMessage(
+        @Header("x-access-token") token: String,
+        @Body messageRequest: RetrofitClient2.RequestMessage
+    ): Call<RetrofitClient2.ResponseMessage>
+
+    // Chat 3
+    @GET("/chat/list")
+    fun getChatList(
+        @Header("x-access-token") token: String
+    ): Call<RetrofitClient2.ResponseChatList>
+
+    // Chat 4
+    @GET("/chat/message")
+    fun getChatMessages(
+        @Header("x-access-token") token: String,
+        @Query("room_title") roomTitle: String
+    ): Call<RetrofitClient2.ResponseChatMessages>
   
     @GET("/home/homescreen")
     fun getHomeScreen(
